@@ -42,9 +42,20 @@ detect_arch() {
 }
 
 latest_tag() {
-    curl -fsSL -I -o /dev/null -w '%{url_effective}' \
-        "https://github.com/${REPO}/releases/latest" \
-        | sed 's#.*/##'
+    resolved_url="$(curl -fsSL -I -o /dev/null -w '%{url_effective}' \
+        "https://github.com/${REPO}/releases/latest")"
+    tag="$(printf '%s' "$resolved_url" | sed 's#.*/##')"
+
+    case "$resolved_url" in
+        */releases|*/releases/)
+            echo "Error: no GitHub release is published for ${REPO} yet." >&2
+            echo "Try installing from source instead:" >&2
+            echo "cargo install --git https://github.com/${REPO}.git --bin ${BINARY}" >&2
+            exit 1
+            ;;
+    esac
+
+    printf '%s\n' "$tag"
 }
 
 asset_name() {
@@ -68,7 +79,7 @@ main() {
     require_commands
 
     tag="$(latest_tag)"
-    if [ -z "$tag" ] || [ "$tag" = "null" ]; then
+    if [ -z "$tag" ] || [ "$tag" = "null" ] || [ "$tag" = "releases" ]; then
         echo "Error: could not resolve the latest release tag" >&2
         exit 1
     fi
