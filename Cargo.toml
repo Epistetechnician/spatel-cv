@@ -1,0 +1,23 @@
+[package]
+name = "spatel-cv"
+version = "0.1.0"
+edition = "2024"
+description = "Installable terminal CV for Shaan Patel"
+license = "MIT"
+repository = "https://github.com/Epistetechnician/spatel-cv"
+homepage = "https://shaanpatel.dev"
+documentation = "https://github.com/Epistetechnician/spatel-cv#readme"
+keywords = ["cv", "resume", "tui", "terminal", "portfolio"]
+categories = ["command-line-utilities"]
+
+[[bin]]
+name = "spatel"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0.102"
+clap = { version = "4.5.60", features = ["derive"] }
+crossterm = "0.29.0"
+open = "5.3.3"
+ratatui = "0.30.0"
+unicode-width = "0.2.2"
