@@ -21,7 +21,7 @@ jobs:
             target: x86_64-unknown-linux-musl
             archive: spatel-linux-amd64.tar.gz
             binary: spatel
-          - os: macos-13
+          - os: macos-15-intel
             target: x86_64-apple-darwin
             archive: spatel-macos-amd64.tar.gz
             binary: spatel
