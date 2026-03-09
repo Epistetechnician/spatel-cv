@@ -3,7 +3,10 @@ use ratatui::{
     widgets::{Block, Clear, List, ListItem, ListState, Padding, Paragraph, Wrap},
 };
 
-use crate::{app::App, data::Entry};
+use crate::{
+    app::{App, ChatTurn},
+    data::Entry,
+};
 
 pub fn render(frame: &mut Frame<'_>, app: &App) {
     frame.render_widget(Clear, frame.area());
@@ -21,6 +24,10 @@ pub fn render(frame: &mut Frame<'_>, app: &App) {
 
     if app.should_show_small_terminal_tip() {
         render_small_terminal_notice(frame);
+    }
+
+    if app.is_question_mode() {
+        render_question_prompt(frame, app);
     }
 }
 
@@ -126,24 +133,32 @@ fn render_entries(frame: &mut Frame<'_>, app: &App, area: Rect) {
 }
 
 fn render_details(frame: &mut Frame<'_>, app: &App, area: Rect) {
-    let section = app.selected_section();
-    let text = if let Some(entry) = app.selected_entry() {
-        detail_text(section.description, entry)
+    let text = if app.show_chat_panel() {
+        chat_text(app.chat_turns())
     } else {
-        Text::from(vec![
-            Line::from(Span::styled(
-                section.title,
-                Style::new().fg(Color::Yellow).bold(),
-            )),
-            Line::from(""),
-            Line::from(section.description),
-        ])
+        let section = app.selected_section();
+        if let Some(entry) = app.selected_entry() {
+            detail_text(section.description, entry)
+        } else {
+            Text::from(vec![
+                Line::from(Span::styled(
+                    section.title,
+                    Style::new().fg(Color::Yellow).bold(),
+                )),
+                Line::from(""),
+                Line::from(section.description),
+            ])
+        }
     };
 
     let details = Paragraph::new(text)
         .block(
             Block::bordered()
-                .title("Details")
+                .title(if app.show_chat_panel() {
+                    "Ask Shaan"
+                } else {
+                    "Details"
+                })
                 .padding(Padding::horizontal(1)),
         )
         .wrap(Wrap { trim: false });
@@ -154,7 +169,7 @@ fn render_details(frame: &mut Frame<'_>, app: &App, area: Rect) {
 fn render_footer(frame: &mut Frame<'_>, app: &App, area: Rect) {
     let footer = Paragraph::new(Text::from(vec![
         Line::from(
-            "keys: h/l sections  j/k entries  enter/o open link  g/G ends  x dismiss tip  q quit",
+            "keys: h/l sections  j/k entries  / ask  tab toggle chat  enter/o open link  g/G ends  x dismiss tip  q quit",
         ),
         Line::from(Span::styled(app.status(), Style::new().fg(Color::Cyan))),
     ]))
@@ -172,6 +187,32 @@ fn render_small_terminal_notice(frame: &mut Frame<'_>) {
 
     frame.render_widget(Clear, popup);
     frame.render_widget(message, popup);
+}
+
+fn render_question_prompt(frame: &mut Frame<'_>, app: &App) {
+    let popup = centered_rect(74, 22, frame.area());
+    let prompt = Paragraph::new(Text::from(vec![
+        Line::from(Span::styled(
+            "Ask a grounded question about Shaan Patel",
+            Style::new().fg(Color::Yellow).bold(),
+        )),
+        Line::from(""),
+        Line::from(app.question_input().to_string()),
+        Line::from(""),
+        Line::from(Span::styled(
+            "enter ask  esc cancel  backspace edit",
+            Style::new().fg(Color::DarkGray),
+        )),
+    ]))
+    .block(
+        Block::bordered()
+            .title("Question")
+            .padding(Padding::horizontal(1)),
+    )
+    .wrap(Wrap { trim: false });
+
+    frame.render_widget(Clear, popup);
+    frame.render_widget(prompt, popup);
 }
 
 fn detail_text(section_description: &str, entry: &Entry) -> Text<'static> {
@@ -222,6 +263,48 @@ fn detail_text(section_description: &str, entry: &Entry) -> Text<'static> {
             Style::new().fg(Color::Cyan).bold(),
         )));
         lines.push(Line::from(url.to_string()));
+    }
+
+    Text::from(lines)
+}
+
+fn chat_text(turns: &[ChatTurn]) -> Text<'static> {
+    let mut lines = vec![
+        Line::from(Span::styled(
+            "Grounded personal Q&A",
+            Style::new().fg(Color::Yellow).bold(),
+        )),
+        Line::from(""),
+    ];
+
+    for (index, turn) in turns.iter().enumerate() {
+        if index > 0 {
+            lines.push(Line::from(""));
+        }
+
+        lines.push(Line::from(Span::styled(
+            format!("Q: {}", turn.question),
+            Style::new().fg(Color::Cyan).bold(),
+        )));
+        lines.push(Line::from(turn.answer.body.clone()));
+        if !turn.answer.citations.is_empty() {
+            lines.push(Line::from(Span::styled(
+                format!(
+                    "Sources: {}",
+                    turn.answer
+                        .citations
+                        .iter()
+                        .map(|citation| citation.title.as_str())
+                        .collect::<Vec<_>>()
+                        .join(" | ")
+                ),
+                Style::new().fg(Color::Magenta),
+            )));
+        }
+        lines.push(Line::from(Span::styled(
+            format!("Mode: {}", turn.answer.mode.label()),
+            Style::new().fg(Color::DarkGray),
+        )));
     }
 
     Text::from(lines)

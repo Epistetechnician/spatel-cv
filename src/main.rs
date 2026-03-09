@@ -1,9 +1,10 @@
 mod app;
 mod data;
+mod persona;
 mod ui;
 
 use std::{
-    io::{self, IsTerminal},
+    io::{self, IsTerminal, Write},
     time::Duration,
 };
 
@@ -16,6 +17,7 @@ use crossterm::{
     terminal::{EnterAlternateScreen, LeaveAlternateScreen, disable_raw_mode, enable_raw_mode},
 };
 use data::{Entry, Resume, Section, SectionId};
+use persona::{AnswerEngine, QaConfig};
 use ratatui::{Terminal, backend::CrosstermBackend};
 
 #[derive(Parser, Debug)]
@@ -59,12 +61,73 @@ struct Cli {
     print: bool,
     #[arg(long, help = "Print the full CV and exit")]
     all: bool,
+    #[arg(
+        long,
+        value_name = "QUESTION",
+        help = "Ask a grounded question about Shaan Patel"
+    )]
+    ask: Option<String>,
+    #[arg(long, help = "Start an interactive personal Q&A shell")]
+    chat: bool,
+    #[arg(long, help = "Build the local personalized quantized Ollama model")]
+    build_pico_model: bool,
+    #[arg(
+        long,
+        default_value = persona::DEFAULT_PERSONA_MODEL,
+        help = "Personalized Ollama model name"
+    )]
+    model: String,
+    #[arg(
+        long,
+        default_value = persona::DEFAULT_BASE_MODEL,
+        help = "Base Ollama model used for build and fallback generation"
+    )]
+    base_model: String,
+    #[arg(
+        long,
+        default_value = persona::DEFAULT_QUANTIZATION,
+        help = "Quantization preset used when building the personalized model"
+    )]
+    quantize: String,
+    #[arg(long, help = "Skip Ollama and answer only from the local corpus")]
+    offline_only: bool,
 }
 
 fn main() -> Result<()> {
     let cli = Cli::parse();
     let initial_section = cli.section();
-    let app = App::new(initial_section);
+    let qa_config = QaConfig {
+        persona_model: cli.model.clone(),
+        base_model: cli.base_model.clone(),
+        quantization: cli.quantize.clone(),
+        offline_only: cli.offline_only,
+    };
+
+    if cli.build_pico_model {
+        let engine = AnswerEngine::new(qa_config, &data::resume());
+        let modelfile_path = engine.build_persona_model()?;
+        println!(
+            "Built {} from {}.\nModelfile: {}",
+            cli.model,
+            cli.base_model,
+            modelfile_path.display()
+        );
+        return Ok(());
+    }
+
+    let engine = AnswerEngine::new(qa_config.clone(), &data::resume());
+
+    if let Some(question) = &cli.ask {
+        println!("{}", engine.answer(question)?.render_text());
+        return Ok(());
+    }
+
+    if cli.chat {
+        run_chat(&engine)?;
+        return Ok(());
+    }
+
+    let app = App::new(initial_section, qa_config);
 
     if cli.print || cli.all || !io::stdout().is_terminal() {
         if cli.all || initial_section.is_none() {
@@ -140,7 +203,25 @@ fn run_event_loop(
                     continue;
                 }
 
+                if app.is_question_mode() {
+                    match key.code {
+                        KeyCode::Esc => app.cancel_question_mode(),
+                        KeyCode::Backspace => app.backspace_question(),
+                        KeyCode::Enter => {
+                            if let Err(error) = app.submit_question() {
+                                app.set_status(format!("Ask failed: {error}"));
+                            }
+                        }
+                        KeyCode::Char(ch) => app.append_question_char(ch),
+                        _ => {}
+                    }
+                    continue;
+                }
+
                 match key.code {
+                    KeyCode::Char('/') => app.enter_question_mode(),
+                    KeyCode::Char('?') => app.enter_question_mode(),
+                    KeyCode::Tab => app.toggle_chat_panel(),
                     KeyCode::Char('q') | KeyCode::Esc => return Ok(()),
                     KeyCode::Char('h') | KeyCode::Left => app.previous_section(),
                     KeyCode::Char('l') | KeyCode::Right => app.next_section(),
@@ -214,6 +295,35 @@ fn format_entry(entry: &Entry) -> String {
     output
 }
 
+fn run_chat(engine: &AnswerEngine) -> Result<()> {
+    let mut stdout = io::stdout();
+    let stdin = io::stdin();
+    println!("spatel chat");
+    println!("Ask about work, worldview, essays, or interests. Type `exit` to quit.\n");
+
+    loop {
+        print!("you> ");
+        stdout.flush()?;
+
+        let mut buffer = String::new();
+        stdin.read_line(&mut buffer)?;
+        let question = buffer.trim();
+
+        if matches!(question, "exit" | "quit" | "q") {
+            break;
+        }
+
+        if question.is_empty() {
+            continue;
+        }
+
+        let answer = engine.answer(question)?;
+        println!("shaan> {}\n", answer.render_text());
+    }
+
+    Ok(())
+}
+
 struct TerminalSession {
     terminal: Terminal<CrosstermBackend<io::Stdout>>,
 }
@@ -257,7 +367,7 @@ mod tests {
 
     #[test]
     fn formatted_resume_contains_core_sections() {
-        let app = App::new(None);
+        let app = App::new(None, QaConfig::default());
         let output = format_resume(&app.resume);
 
         assert!(output.contains("OVERVIEW"));
@@ -269,7 +379,7 @@ mod tests {
 
     #[test]
     fn selected_section_prints_expected_heading() {
-        let app = App::new(Some(SectionId::Links));
+        let app = App::new(Some(SectionId::Links), QaConfig::default());
         let output = format_section(app.selected_section());
 
         assert!(output.starts_with("LINKS\n"));
@@ -278,7 +388,7 @@ mod tests {
 
     #[test]
     fn small_terminal_tip_can_be_dismissed_and_resets() {
-        let mut app = App::new(None);
+        let mut app = App::new(None, QaConfig::default());
 
         app.sync_viewport(80, 20);
         assert!(app.should_show_small_terminal_tip());
