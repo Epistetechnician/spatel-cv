@@ -4,7 +4,7 @@ mod persona;
 mod ui;
 
 use std::{
-    io::{self, IsTerminal, Write},
+    io::{self, BufRead, IsTerminal, Write},
     time::Duration,
 };
 
@@ -296,17 +296,33 @@ fn format_entry(entry: &Entry) -> String {
 }
 
 fn run_chat(engine: &AnswerEngine) -> Result<()> {
-    let mut stdout = io::stdout();
     let stdin = io::stdin();
-    println!("spatel chat");
-    println!("Ask about work, worldview, essays, or interests. Type `exit` to quit.\n");
+    let stdout = io::stdout();
+    run_chat_io(engine, stdin.lock(), stdout)
+}
+
+fn run_chat_io<R: BufRead, W: Write>(
+    engine: &AnswerEngine,
+    mut input: R,
+    mut output: W,
+) -> Result<()> {
+    writeln!(output, "spatel chat")?;
+    writeln!(
+        output,
+        "Ask about work, worldview, essays, or interests. Type `exit` to quit.\n"
+    )?;
 
     loop {
-        print!("you> ");
-        stdout.flush()?;
+        write!(output, "you> ")?;
+        output.flush()?;
 
         let mut buffer = String::new();
-        stdin.read_line(&mut buffer)?;
+        let bytes_read = input.read_line(&mut buffer)?;
+        if bytes_read == 0 {
+            writeln!(output)?;
+            break;
+        }
+
         let question = buffer.trim();
 
         if matches!(question, "exit" | "quit" | "q") {
@@ -318,7 +334,7 @@ fn run_chat(engine: &AnswerEngine) -> Result<()> {
         }
 
         let answer = engine.answer(question)?;
-        println!("shaan> {}\n", answer.render_text());
+        writeln!(output, "shaan> {}\n", answer.render_text())?;
     }
 
     Ok(())
@@ -364,6 +380,7 @@ impl Drop for TerminalSession {
 #[cfg(test)]
 mod tests {
     use super::*;
+    use std::io::Cursor;
 
     #[test]
     fn formatted_resume_contains_core_sections() {
@@ -401,5 +418,43 @@ mod tests {
 
         app.sync_viewport(80, 20);
         assert!(app.should_show_small_terminal_tip());
+    }
+
+    #[test]
+    fn chat_loop_exits_cleanly_on_eof() {
+        let engine = AnswerEngine::new(
+            QaConfig {
+                offline_only: true,
+                ..QaConfig::default()
+            },
+            &data::resume(),
+        );
+        let input = Cursor::new(Vec::<u8>::new());
+        let mut output = Vec::new();
+
+        run_chat_io(&engine, input, &mut output).unwrap();
+
+        let rendered = String::from_utf8(output).unwrap();
+        assert!(rendered.contains("spatel chat"));
+        assert!(rendered.ends_with("you> \n"));
+    }
+
+    #[test]
+    fn chat_loop_answers_and_exits_on_quit() {
+        let engine = AnswerEngine::new(
+            QaConfig {
+                offline_only: true,
+                ..QaConfig::default()
+            },
+            &data::resume(),
+        );
+        let input = Cursor::new(b"What are you working on right now?\nq\n".to_vec());
+        let mut output = Vec::new();
+
+        run_chat_io(&engine, input, &mut output).unwrap();
+
+        let rendered = String::from_utf8(output).unwrap();
+        assert!(rendered.contains("shaan>"));
+        assert!(rendered.contains("Mode: grounded corpus"));
     }
 }

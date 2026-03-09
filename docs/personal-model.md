@@ -23,6 +23,8 @@ Interactive shell:
 spatel --chat
 ```
 
+The chat shell exits on `exit`, `quit`, `q`, or EOF.
+
 Build the personalized local model:
 
 ```sh
