@@ -7,7 +7,8 @@ This project ships a polished Rust TUI that lets people browse experience, found
 It now also ships a grounded personal Q&A layer:
 
 - offline retrieval-first answers from a local Shaan corpus
-- optional Ollama-backed generation with a tiny personalized `qwen2.5:0.5b` derivative
+- hosted Anthropic-compatible generation through Minimax by default when `ANTHROPIC_API_KEY` is set
+- optional Ollama-backed generation with a tiny personalized `qwen2.5:0.5b` derivative when `--local-llm` is enabled
 - TUI question entry and CLI chat / single-question flows
 
 ## Install
@@ -57,6 +58,8 @@ spatel --all --print # print the full CV
 spatel --ask "What are you working on right now?" # ask one grounded question
 spatel --chat # interactive Q&A shell
 spatel --build-pico-model # build the local personalized Ollama model
+spatel --local-llm --ask "What kind of systems do you build?" # prefer local Ollama first
+spatel --no-remote-llm --ask "What kind of systems do you build?" # disable hosted generation
 ```
 
 For offline-only answering without Ollama:
@@ -78,19 +81,31 @@ spatel --ask "How do you think about public goods?" --offline-only
 
 ## Personal Model
 
-The default personal model flow is:
+The default hosted model flow uses an Anthropic-compatible provider. Minimax is the default endpoint:
+
+```sh
+export ANTHROPIC_BASE_URL="https://api.minimax.io/anthropic"
+export ANTHROPIC_HOST="https://api.minimax.io/anthropic"
+export ANTHROPIC_API_KEY="..."
+spatel --ask "What kind of work energizes you?"
+```
+
+Do not commit API keys. Set them in your shell, secret manager, or deployment environment.
+
+The optional local model flow is:
 
 ```sh
 ollama pull qwen2.5:0.5b
 spatel --build-pico-model
-spatel --ask "What kind of work energizes you?"
+spatel --local-llm --ask "What kind of work energizes you?"
 ```
 
 Notes:
 
 - `qwen2.5:0.5b` is already a small quantized base model in Ollama.
 - `spatel --build-pico-model` creates `shaanpatel-cv-pico`, a personalized derivative grounded in the embedded resume and essay corpus.
-- If Ollama is unavailable, `spatel` falls back to grounded offline answers.
+- Without `--local-llm`, `spatel` tries hosted generation first when `ANTHROPIC_API_KEY` is available.
+- If hosted generation and Ollama are unavailable, `spatel` falls back to grounded offline answers.
 - Rust 1.88+ is required. On this machine, verification used the rustup-managed stable toolchain instead of the older Homebrew Rust.
 
 ## Links

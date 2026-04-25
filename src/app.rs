@@ -1,5 +1,6 @@
 use anyhow::{Context, Result};
 
+use crate::ambient::AmbientScene;
 use crate::data::{Entry, Resume, Section, SectionId, resume};
 use crate::persona::{Answer, AnswerEngine, QaConfig};
 
@@ -21,6 +22,7 @@ pub struct App {
     chat_panel: bool,
     question_input: String,
     chat_turns: Vec<ChatTurn>,
+    ambient_scene: AmbientScene,
 }
 
 impl App {
@@ -50,6 +52,7 @@ impl App {
             chat_panel: false,
             question_input: String::new(),
             chat_turns: Vec::new(),
+            ambient_scene: AmbientScene::new(),
         }
     }
 
@@ -87,6 +90,14 @@ impl App {
 
     pub fn chat_turns(&self) -> &[ChatTurn] {
         &self.chat_turns
+    }
+
+    pub fn ambient_tick(&self) -> u64 {
+        self.ambient_scene.tick()
+    }
+
+    pub fn advance_ambient(&mut self) {
+        self.ambient_scene.advance();
     }
 
     pub fn set_status(&mut self, status: impl Into<String>) {

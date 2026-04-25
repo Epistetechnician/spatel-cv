@@ -1308,6 +1308,7 @@ dependencies = [
  "crossterm",
  "open",
  "ratatui",
+ "serde_json",
  "unicode-width",
 ]
 

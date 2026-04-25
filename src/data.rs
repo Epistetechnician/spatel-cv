@@ -41,7 +41,7 @@ pub fn resume() -> Resume {
         name: "Shaan Patel",
         headline: "AI researcher, operator, and systems builder across crypto, public goods, and technical storytelling.",
         location: "New York, NY",
-        website: "https://shaanpatel.dev",
+        website: "https://patelshaan.up.railway.app/",
         sections: vec![
             Section {
                 id: SectionId::Overview,
@@ -59,7 +59,7 @@ pub fn resume() -> Resume {
                             "Care deeply about systems that feel rigorous without losing beauty or humanity.",
                         ],
                         meta: &["AI", "crypto", "protocols", "operator"],
-                        url: Some("https://shaanpatel.dev"),
+                        url: Some("https://patelshaan.up.railway.app/"),
                         command: None,
                     },
                     Entry {
@@ -72,7 +72,7 @@ pub fn resume() -> Resume {
                             "Grounded by permaculture, DIY engineering, running, biking, cooking, yoga, soccer, chess, Go, and Catan.",
                         ],
                         meta: &["research", "governance", "design"],
-                        url: Some("https://shaanpatel.dev"),
+                        url: Some("https://patelshaan.up.railway.app/"),
                         command: None,
                     },
                 ],
@@ -244,7 +244,7 @@ pub fn resume() -> Resume {
                             "zk",
                             "Rust",
                         ],
-                        url: Some("https://shaanpatel.dev"),
+                        url: Some("https://patelshaan.up.railway.app/"),
                         command: None,
                     },
                     Entry {
@@ -330,7 +330,7 @@ pub fn resume() -> Resume {
                             "Best first stop for the broader narrative and interactive presentation.",
                         ],
                         meta: &["primary"],
-                        url: Some("https://shaanpatel.dev"),
+                        url: Some("https://patelshaan.up.railway.app/"),
                         command: None,
                     },
                     Entry {

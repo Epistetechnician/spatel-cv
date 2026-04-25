@@ -4,6 +4,7 @@ use ratatui::{
 };
 
 use crate::{
+    ambient,
     app::{App, ChatTurn},
     data::Entry,
 };
@@ -17,6 +18,9 @@ pub fn render(frame: &mut Frame<'_>, app: &App) {
         Constraint::Length(3),
     ])
     .split(frame.area());
+
+    let atmosphere = ambient::atmosphere_for(app.selected_section().id);
+    ambient::render(frame, root[1], atmosphere, app.ambient_tick());
 
     render_header(frame, app, root[0]);
     render_body(frame, app, root[1]);
@@ -150,6 +154,11 @@ fn render_details(frame: &mut Frame<'_>, app: &App, area: Rect) {
             ])
         }
     };
+    let chat_scroll = if app.show_chat_panel() {
+        chat_scroll_offset(&text, area)
+    } else {
+        0
+    };
 
     let details = Paragraph::new(text)
         .block(
@@ -161,6 +170,7 @@ fn render_details(frame: &mut Frame<'_>, app: &App, area: Rect) {
                 })
                 .padding(Padding::horizontal(1)),
         )
+        .scroll((chat_scroll, 0))
         .wrap(Wrap { trim: false });
 
     frame.render_widget(details, area);
@@ -308,6 +318,16 @@ fn chat_text(turns: &[ChatTurn]) -> Text<'static> {
     }
 
     Text::from(lines)
+}
+
+fn chat_scroll_offset(text: &Text<'_>, area: Rect) -> u16 {
+    // Keep newest lines visible inside the bordered details panel.
+    let available_height = area.height.saturating_sub(2) as usize;
+    if available_height == 0 {
+        return 0;
+    }
+
+    text.lines.len().saturating_sub(available_height) as u16
 }
 
 fn centered_rect(percent_x: u16, percent_y: u16, area: Rect) -> Rect {
