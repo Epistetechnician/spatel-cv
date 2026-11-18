@@ -1,3 +1,8 @@
 /target
 .DS_Store
-
+/posttrain/.venv/
+/posttrain/.cache/
+/posttrain/adapters/
+/posttrain/fused_hf/
+/posttrain/models/
+*.gguf

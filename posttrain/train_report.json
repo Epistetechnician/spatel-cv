@@ -1,0 +1,50 @@
+{
+  "hf_base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "iters": 260,
+  "batch_size": 4,
+  "learning_rate": 0.0001,
+  "lora_rank": 16,
+  "lora_scale": 2.0,
+  "num_layers": -1,
+  "train_seconds": 509.91,
+  "fuse_seconds": 25.76,
+  "fused_dir": "/Users/shaanp/Documents/GitHub/patelshaan/spatel-cv/posttrain/fused_hf",
+  "val_loss_curve": [
+    {
+      "iter": 1,
+      "val_loss": 4.244
+    },
+    {
+      "iter": 50,
+      "val_loss": 2.555
+    },
+    {
+      "iter": 100,
+      "val_loss": 0.5
+    },
+    {
+      "iter": 150,
+      "val_loss": 0.194
+    },
+    {
+      "iter": 200,
+      "val_loss": 0.067
+    },
+    {
+      "iter": 250,
+      "val_loss": 0.051
+    },
+    {
+      "iter": 260,
+      "val_loss": 0.049
+    }
+  ],
+  "first_train_loss": {
+    "iter": 20,
+    "train_loss": 2.833
+  },
+  "last_train_loss": {
+    "iter": 260,
+    "train_loss": 0.006
+  }
+}

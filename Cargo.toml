@@ -1,11 +1,11 @@
 [package]
 name = "spatel-cv"
-version = "0.1.4"
+version = "0.2.0"
 edition = "2024"
-description = "Installable terminal CV for Shaan Patel"
+description = "Installable terminal CV and post-trained personal model for Shaan Patel"
 license = "MIT"
 repository = "https://github.com/Epistetechnician/spatel-cv"
-homepage = "https://patelshaan.up.railway.app/"
+homepage = "https://shaan4d.xyz"
 documentation = "https://github.com/Epistetechnician/spatel-cv#readme"
 keywords = ["cv", "resume", "tui", "terminal", "portfolio"]
 categories = ["command-line-utilities"]

@@ -1,0 +1,8 @@
+{
+  "domain_groups": 36,
+  "train_examples": 138,
+  "valid_examples": 16,
+  "heldout_eval_questions": 16,
+  "train_sha256_prefix": "988c97da4aff8cca",
+  "heldout_sha256_prefix": "991404cd7d56a40b"
+}

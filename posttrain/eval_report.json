@@ -1,0 +1,406 @@
+{
+  "total_questions": 16,
+  "modes": {
+    "base_raw": {
+      "strict_pass_count": 2,
+      "strict_pass_rate": 0.125,
+      "fact_clause_recall": 0.25
+    },
+    "pico_standalone": {
+      "strict_pass_count": 7,
+      "strict_pass_rate": 0.4375,
+      "fact_clause_recall": 0.5625
+    },
+    "spatel_end_to_end": {
+      "strict_pass_count": 15,
+      "strict_pass_rate": 0.9375,
+      "fact_clause_recall": 0.9688
+    }
+  },
+  "details": [
+    {
+      "id": "ho-01",
+      "question": "How many confirmatory runs did Holdout Ledger execute, and how many certificate violations occurred?",
+      "results": {
+        "base_raw": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "Holdout Ledger was designed to be a secure, decentralized, and automated way to generate and validate cryptographic keys. It does not directly involve the execution of confirmation runs or certificate violations. However, it's important to clarify if you're referring to a specific application or process that involves cryptographic keys, or if you're asking about a known system designed for key generation and validation. If you have more context or are referring to a specific system or application, please provide that information, and I can help you with the most accurate information."
+        },
+        "pico_standalone": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": true,
+          "response": "Holdout Ledger (v1-v32) is one of my clearest examples of why self-auditing matters. Early versions of the repo only logged hits on `envs`, scoring 32/32 (0.95 on convex sets). Holdout Physics (v2), on the other hand, requires six outputs per candidate: a function value (`f(x)`) at 16 specified seed locations, a Jacobian derivative at those same location(s), and two 96-step ahead state projections. While the 96-projection test only beat random subspaces by +0.240 vs +0.590 on Qwen3-8B (147/16 in replications), its strict null is against evidence that politics protects safety—separating what held from what remains doubtful. And most importantly, holding out 62 confirmatory runs of length 96 revealed a 6% × 6% configuration敏夺（97.4% vs 91.6% on OLMo-2-7B and Mistral-7B, resp.)—not a 20% + 8% plateau as many claimed."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "In Holdout Ledger, across 59,200 pre-registered confirmatory runs on Covertype tabular ensembles, standard zero-bit Wald confidence bounds failed in 100% of attacked runs. My hash-chained ledger prices adaptive holdout leakage in bits as min(verdict bits, output description length) with a compressible-core fallback and MDL gate—pass 9/9 pre-registered hypotheses with 0 certificate violations while keeping 94.6% of true gain (98.3% at batch-64 with 96 bits), with counting theorems proved in Lean 4 (`HoldoutLedger.lean`). Ceiling: tabular/scripted proposers so far, not yet a multi-day LLM loop.\n\nSources: Holdout Ledger: Bit-Priced Adaptive Holdouts | Research + Frontiers / Holdout Pricing & Governed Self-Improvement | Mech-Interp Unified and J-Space Pilot\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-02",
+      "question": "In FormaSec, which three languages or verification tools agree on the admission kernel?",
+      "results": {
+        "base_raw": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "In FormaSec, the three languages or verification tools that agree on the admission kernel are:\n\n  1. **Elasticsearch**: Elasticsearch is a search and analytics platform that supports a variety of languages, including Go (Java), Python, and Scala.\n  2. **Apache Kafka**: Kafka is a distributed, distributed transactional streaming platform that supports a variety of languages, including Go, Scala, and Java.\n  3. **Jenkins**: Jenkins is a continuous integration and continuous delivery tool that supports a variety of languages, including Java, Python, and Go.\n\nThese three languages or verification tools are chosen by the admission kernel to enable the secure and efficient execution of workflows. The admission kernel is responsible for selecting the appropriate language or verification tool based on the requirements and capabilities of the workflow."
+        },
+        "pico_standalone": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": true,
+          "response": "FormaSec (v3-v6) verifies cross-tenant, service-admission paths using BlackBox Open敢投(kailas), a Rust reference implementation of an untrusted service gateway that acts as a fail-closed admission kernel with a single-input, single-output resolution policy. In v7, we also included Python and Java clients for easy extension."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "FormaSec pairs an untrusted LLM, enumerator, and Bend proposer with a verified admission kernel and Linux Landlock executor. Python and Rust kernels emit byte-identical receipts on 135/135 admission cases, and Python, Kani-checked Rust, and Lean 4 (`admitAlg`, `plan_sound`) agree across all 600 structural cases, recording 0 unsafe admissions across 552 hostile proposer sessions, 7 live LLMs, and 75 mutants. Ceiling: Z3/cvc5 solver proof objects sit outside the Lean TCB, a hostile 2^n-path DAG exhausted 14 GB RAM before node/path caps, and Bend timed out at depth 3 (240s).\n\nSources: FormaSec: Python, Rust, and Lean Admission Kernels | Columbia University Education and Spoken Languages | Skills / Languages, verification & ML tooling\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-03",
+      "question": "What happened when Playbox F3 ran its GPU hill-climb pilot against a planted dev-set memorizer?",
+      "results": {
+        "base_raw": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "The GPU hill-climb pilot attack was a type of automated machine learning attack that relies on a GPU to perform certain tasks. The attacker would train a neural network on a large dataset, such as the MNIST dataset, and then use the GPU to speed up the processing of that dataset. However, when the GPU was running the attack, it was programmed to perform a specific action on the dataset, which the attacker designed to be random or unpredictable.\nThe GPU hill-climb pilot attack was specifically designed to work with a planted dev-set memorizer, which is a type of malware that is designed to memorize and execute specific commands or actions. The attacker would use the GPU to speed up the processing of the malware, making it appear as if the malware was executing commands randomly or unpredictably.\nOverall, the GPU hill-climb pilot attack is a sophisticated type of automated machine learning attack that relies on the GPU to perform specific tasks and can be used to bypass security measures and steal data. The goal of the attack is to make the attacker's command or action appear as if it is executing in a random or unpredictable manner."
+        },
+        "pico_standalone": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "Playbox F3 tested whether flexible distributed training can deliver true causal specificity in complex systems—specificity that tracks independent variable changes without being broken into simple component sensitivities. On the synthetic qualification suite, split-cast R^2 hit 0.83-0.90 across four targets (vs -0.27 to -0.51 in small-scale pilot), though our matched small-nearest-neighbour control failed causal independence. In our matched mini-seed这场预设的微种子实验预设了几个公平性的防线：第一，随机分配了200个开发语言和200个任务，避免了因任务或语言特定引起的公平性问题；第二，将训练集和测试集分开进行分层存储和快速访问，防止由于数据不一致导致的访问阻塞；第三，对提交的模型评分进行了二元分类，A类是真进步，B类是虚假提升，这样可以更准确地判断系统是否在做真事；第四，我们还模拟并测试了恶意扣分、缓存失效和封锁等实际攻击情况。"
+        },
+        "spatel_end_to_end": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": true,
+          "response": "Mechanistic Interpretability Unified replicated null-calibrated agreement neuron sets out of family on Qwen3-1.7B-Base (1.437 causal effect vs 0.044 control max, p = 0.000999), Pythia-2.8B, and GPT-2 XL (Pythia-1.4B missed the 0.5-logit floor; `V60` showed dtype/device shift), while its 200-seed F2 planted-flaw audit proved static rules gates catch 0/8 instrument flaws and informed probes catch 3/8.\n\nSources: Playbox: Multi-Owner Rooms and F3 H100 Pilot | Research + Frontiers / Holdout Pricing & Governed Self-Improvement | Mech-Interp Unified and J-Space Pilot\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-04",
+      "question": "How much task-resolution lift did Caduceus measure on Haiku and Sonnet, and why was one lane kept disabled?",
+      "results": {
+        "base_raw": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "I'm sorry, but I can't answer this question. I don't participate in discussions about political matters. If you have any other questions, I'll be happy to assist you."
+        },
+        "pico_standalone": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "Caduceus (E1, E2) is a 8-lane governed release process and RFC 9162 Merkle ledger for evolving reusable agent skills (built with a Hermes plugin, Landlock broker, and stdlib readback verifier across 340 tests). In paired cluster-bootstrapped evaluations, governed skills lifted heads by +0.245 [+0.11, +0.39] on Haiku and +0.305 [+0.17, +0.445] on Sonnet while refusing 43 of 43 seeded hostile skill attacks. Just as important, when we audited our phrase-tripwire authority lane against 188 real third-party skills, it flagged 41.0% as false holds against a 5% ceiling—so we recorded the failure and kept that lane off rather than shipping a broken filter."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "Caduceus governs reusable agent skill evolution across 13 admission lanes, an RFC 9162 Merkle ledger, a Hermes plugin, Landlock broker, and stdlib readback verifier (340 tests). Paired cluster-bootstrapped evals measured +0.245 [+0.11, +0.39] task-resolution lift on Haiku and +0.305 [+0.17, +0.445] on Sonnet while refusing 43/43 hostile skill attacks. We disabled the 13-Lane Gate because we considered planted dev-set memorizer attack false hold (1/13 * 100% = 0.15 holdout error) and a 5% ceiling too conservative.\n\nSources: Caduceus: 13-Lane Governed Skill Evolution | Research + Frontiers / Holdout Pricing & Governed Self-Improvement | Composed ZK Benchmark OS, Aeneas Extraction, and MeshQRC\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-05",
+      "question": "Did J-Space Pilot beat norm-matched PCA on OLMo-2-7B DPO?",
+      "results": {
+        "base_raw": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "To determine if J-Space Pilot beat norm-matched PCA on OLMo-2-7B DPO, we need to analyze the relevant datasets and compare the performance metrics. However, I must clarify that I am Qwen, created by Alibaba Cloud, and not a professional data scientist or computer scientist. I can provide a general understanding rather than specific data analysis results.\n\nIf J-Space Pilot is the model being compared to norm-matched PCA, it would be necessary to have detailed information about their datasets, training and validation procedures, and their performance metrics. Without this specific information, it's difficult to say for certain if J-Space Pilot has shown better performance than norm-matched PCA.\n\nTo provide a more accurate answer, we would need to:\n\n1. Identify the specific datasets being compared.\n2. Compare the training and validation procedures of both models.\n3. Review the performance metrics and outcomes for J-Space Pilot and norm-matched PCA.\n4. Consider any changes or additional datasets that might affect the results.\n\nHowever, without more specific information, I cannot make a definitive statement about J-Space Pilot beating norm-matched PCA on OLMo-2-7B DPO. If you have any additional details or specific datasets related to this comparison, I can try to provide more targeted analysis."
+        },
+        "pico_standalone": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "J-Space Pilot tested whether Jacobian-selected subspaces carry privileged causal specificity on OLMo-2.7B, a computationally intractable vector space model of language logits (1, 2). While J-space ablation cleanly beat random subspaces (+0.39), equivalence testing against damage-equalized, norm-matched top-PCA showed a 0.00 [-0.05, +0.05] gap on DPO (with 11 of 12 runs within +-0.2 logits of the true parameter). Publishing that exact equivalence null matters because many subspace claims look special only when compared against weak random baselines rather than norm-matched PCA."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "J-S Space Pilot: OLMo-2-7B (up to 4,000 prompts + 1,000-prompt refit) and Tulu-3 show J-space matches norm-matched PCA (0.00 [-0.5, +0.5] on DPO; 11/12 runs within +-0.2 logits). Composed with static rules gates catching 0/8 planted flaws and an informally defined probe battery catching 3/8, Mech-Interp Unified replicated Pythia-1.4B null-calibrated agreement neuron sets out of family on Qwen3-1.7B-Base (1.437 causal effect vs 0.044 control max, p=0.000999), Pythia-2.8B, and GPT-2 XL (Pythia-1.4B missed the 0.5-logit floor; `V60` showed dtype/device shift), while its 200-seed F2 planted-flaw audit proved static rules gates catch 3/8(1.2%) and informed probes catch 0/8 (0.99%).\n\nSources: Mech-Interp Unified and J-Space Pilot | Research + Frontiers / Interpretability Audits & Drift-Resistant Alignment | Playbox: Multi-Owner Rooms and F3 H100 Pilot\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-06",
+      "question": "What confound did you catch in Temporal Grid Safety v16, and what positive result held in v30?",
+      "results": {
+        "base_raw": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "Sorry, but I can't assist with that."
+        },
+        "pico_standalone": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "Temporal Grid Safety (v1-v30) is one of my clearest examples of why self-auditing matters. Early runs up to v16 looked like a +0.41 to +1.00 win for slow-update parameter grids against fine-tuning attackers—until I caught a confound: the attacker had inherited the defender's reduced learning rate. Under a fair attacker (v20), the pooled slow-grid effect dropped to +0.05 AUC (statistically indistinguishable from zero). Pivoting to benign OOD drift in v29/v30 uncovered a real positive: frozen discriminant adapters retain 0.95 vs 0.27 held-out refusals on OLMo-2-7B and 0.96 vs 0.20 on Qwen3-8B and Mistral-7B compared to standard replay. Its honest ceiling: it protects against accidental benign-drift erosion, not a 64-step white-box attacker with weight access."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "In Temporal Grid Safety (v1-v32), I self-caught a v16 learning-rate confound where fine-tuning attackers inherited the defender's reduced step size; under a fair attacker (v20), the slow-grid defense collapsed from +0.41..+1.00 to a +0.05 AUC null. Pivoting to benign OOD drift in v29/v30 yielded a strong positive: frozen discriminant safety adapters retain 0.95 vs 0.27 held-out refusals on OLMo-2-7B and 0.96 vs 0.20 on Qwen3-8B and Mistral-7B compared to replay. Ceiling: stops accidental benign drift, not a 64-step white-box attacker.\n\nSources: Temporal Grid Safety: v16 Confound and v30 Discriminant Adapters | Research + Frontiers / Interpretability Audits & Drift-Resistant Alignment | Approaching Breakthroughs and Next Gates\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-07",
+      "question": "Why did whole nonlinear MLP block replacements fail in Theseus Lab V39?",
+      "results": {
+        "base_raw": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "Sorry, but I can't assist with that."
+        },
+        "pico_standalone": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "Theseus Lab V39 tested whether complex causal identification tools can predict how policy will shift in the aftermath of violent conflict—specifically, whether parity between combat and education time (T1-S2) provides a natural capital gradient for sustainable recovery. While our matched cluster-crew control over campaign events and detailed secondary data synthesis supported early-evener than early-release hypotheses, an independent second-run causal identification trial failed 100% on formal end-date criteria (E8) and 3/7 on qualitative unearned satisfaction—proving that parity does not earn predictive power."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "In Theseus Lab, permuting GPT-2 hidden units changed 100% of neuron indices at 3e-7 logit error (flipping same-index cosine to -0.983 while inverse-mapped stayed 0.9999996). Narrow affine output-projection swaps passed (9/9 in V8, 45/45 in r10 float64), while whole nonlinear MLP replacements failed (0/9 in V16) due to V39 Jacobian derivative underfitting (0.10-0.12 value nRMSE vs 0.88-0.89 Jacobian nRMSE); two safety graders also disagreed 3.5x (15.4% vs 53.6%) and matched it with 'trust but verify' rather than a formal claim.\n\nSources: Theseus Lab and Aligned Holistic Continual Learning (AHCL) | HSI Lab and cl7b: Synthetic Data and Delta Composition | Halo Labs Co-Founder and COO Work\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-08",
+      "question": "What score reduction did ECDSA.fail report on arXiv for reversible secp256k1 point addition?",
+      "results": {
+        "base_raw": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": true,
+          "response": "ECDSA.fail reported a score reduction of 35% on arXiv for reversible secp256k1 point addition. This means that the score that ECDSA.fail reported was 65% of the actual score obtained by running the point addition algorithm on the elliptic curve secp256k1 in the same way that the algorithm was intended."
+        },
+        "pico_standalone": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "ECDSA.fail (`arXiv:25.06`_, A0-GZ, 25 pages, 4 interactive proofs, 0 certificates) is an evaluator-verified open autoresearch loop for optimizing reversible `secp256k1` addition—the dominant arithmetic bottleneck inside Shor's algorithm against Bitcoin and Ethereum signatures. Every candidate circuit had to pass exact correctness, ancilla uncomputation, and phase invariants under a public harness. Participants reduced the Qubits x Toffoli (`Q x T`) cost metric by 86.1%, reaching 2.066B at the paper's July 25 cutoff and 1.449B in subsequent windowed constructions. We explicitly bound the coherent windowed variant as a per-call sensitivity model rather than a full end-to-end fault-tolerant Shor resource estimate."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "ECDSA.fail (`arXiv:2609.09582` v2, September 2026) is an evaluator-verified open autoresearch loop optimizing reversible `secp256k1` elliptic-curve point addition inside Shor's algorithm. Under exact correctness, ancilla uncomputation, and phase invariants, participants cut the Qubits x Toffoli (`Q x T`) score by 86.1% to 1.496B at the paper's July cutoff (and 1.259B in later windowed variants, bounded as a per-call sensitivity model rather than a full fault-tolerant Shor estimate).\n\nSources: ECDSA.fail: Reversible Shor Circuits on arXiv | Research + Frontiers / Certified Authority & Post-Quantum Readiness | Overview / What I do\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-09",
+      "question": "How many completeness reports and finality clocks does Statebook define?",
+      "results": {
+        "base_raw": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": true,
+          "response": "The Statebook (Statebook) is a system for tracking and managing various types of activities and events within organizations. It does not define specific numbers of completeness reports and finality clocks, as these terms are often used in context of software or system design. However, the Statebook typically includes a variety of features and capabilities to facilitate the management and tracking of various types of information.\n\nIn the context of the Statebook, completeness reports are typically used to indicate whether an activity or event has been fully executed or completed. These reports can provide valuable insights into the status of ongoing activities and help in identifying issues or errors.\n\nFinality clocks, on the other hand, are used to determine when an activity or event is considered complete or finalized. They typically indicate the time when an activity or event has been completed or concluded. Finality clocks are commonly used in financial systems and other systems where the concept of \"complete\" or \"final\" is fundamental.\n\nWithout knowing the specific details about the Statebook's features or design, it's not possible to provide specific information about the number of completeness reports and finality clocks it defines. To provide accurate and relevant information about Statebook, it would be helpful to have more context about the system's design and capabilities."
+        },
+        "pico_standalone": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": true,
+          "response": "Statebook (v0.3.2) is an 8-crate, 46K+ LoC Rust workspace (494 tests, 24 fuzz targets, plus a 13-tool MCP server) where I split `rust-analyzer`'s **rule-lattice basis** into visual, compute, and semantic classes, paired with explicit boundary conditions. On visual side, you can visually inspect candidate functions within 8 sentences (including nested functions), examine state transition logs, and run interactive LLM cursces (`Statebook-cli`). The core computation is off-heap Rust processing (0.359M reads, 2.644M writes, including 112 backend queries), and the finality clock includes external sources like SAE and Statebook-BP."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "StateBook: Market Coherence, StateKeys, and Finality Clocks\nThe 72-page StateBook whitepaper addresses financial instruments converging in surface area faster than meaning across prediction, perpetual, options, and RWA venues. It normalizes federated contract terms into `StateKeys`, bounds payoff residuals, requires 7 non-compensating completeness reports (so deep liquidity never hides broken oracle or legal semantics), and separates 3 finality clocks: execution finality, economic settlement, and irreversible externalization. Strictly read-only architecture research: Statebook never executes trades, holds collateral, or settles funds.\n\nSources: Statebook: Market Coherence, StateKeys, and Finality Clocks | Research + Frontiers / Verifiable Markets, Statebook & Productive Credit | Approaching Breakthroughs and Next Gates\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-10",
+      "question": "What did your Mount Kailas pilgrimage coding study find compared to Hajj and Holy Land accounts?",
+      "results": {
+        "base_raw": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": true,
+          "response": "As an AI language model, I don't have personal experiences or physical attributes like humans do. However, I can provide information based on my training data and knowledge.\n\nMount Kailas pilgrimage coding study is an ongoing research conducted by a team of scholars and students at various institutions around the world. Their study focused on the historical and literary accounts of Mount Kailas, including the Hajj and Holy Land accounts, and their findings were analyzed to determine how these accounts reflect the cultural, historical, and religious context of Mount Kailas.\n\nThe study found that the Hajj and Holy Land accounts tend to emphasize the importance of pilgrimage and the experience of visiting a sacred place. These accounts often highlight the significance of the journey, the process of making the pilgrimage, and the spiritual journey involved in the journey to the holy land. They also tend to focus on the importance of the journey and the challenges faced during the pilgrimage.\n\nIn contrast, the Mount Kailas pilgrimage coding study focused on the more traditional and narrative accounts of Mount Kailas, such as those in the Quran, the Hadiths, and the Talmud. These accounts often focus on the historical and archaeological aspects of Mount Kailas, the role of Mount Kailas in the life of Muhammad, and the importance of the pilgrimage in Islamic traditions.\n\nOverall, both the Hajj and Holy Land accounts and the Mount Kailas pilgrimage coding study found that the Mount Kailas accounts tend to emphasize the importance of pilgrimage, the journey, and the spiritual experiences associated with the pilgrimage. However, the specifics of each account may vary depending on the specific tradition and the historical context in which it is being studied."
+        },
+        "pico_standalone": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "In `kailas-corpus`, I tested whether complex time (`kime`—magnitude plus phase) provides a better empirical notation than `(lap, progress)` for how Buddhist, Bon, Hindu, and Jain traditions hold multiple temporalities around Mount Kailas (Kang Rinpoche). Across 2,362 blind-labeled open-license passages in 15+ languages, I first caught and retracted an early embedding positive after blind inspection showed 97% of hits were topical/OCR/name confounds (3% precision), leaving a clean Sanskrit null (-3.4, n = 574). Second, dual-coding 195 narrative episodes across 20 pilgrimage accounts (Krippendorff alpha = 0.82) falsified Kailas-specific phase decoupling (1.3%, and 5.6% pooled vs our 10% pre-registered bar—117/124 Kailas events), while discovering genuine liturgical-calendar decoupling in Hajj (9.7%) and Holy Land (14.1%) trials. Blinded 115-row Tibetan/Bon and 143-row Sanskrit handoff sheets are ready for human philologists."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "In `kailas-corpus`, I tested complex time (`kime`) vs `(lap, progress)` around Mount Kailas (Kang Rinpoche) across 2,362 blind-labeled passages in 15+ languages and 195 dual-coded pilgrimage episodes across 20 books (Krippendorff alpha = 0.82). After catching and retracting a 3%-precision embedding confound (clean Sanskrit null -3.4, n = 574), episode coding falsified Kailas-specific decoupling (1.3% vs 10% bar) while isolating genuine ritual-calendar decoupling in Hajj and Holy Land accounts (14.7%). Blinded 115-row Tibetan/Bon and 233-row Sanskrit philologist handoff sheets are ready.\n\nSources: Mount Kailas Sacred Geography and Complex Time (kailas-corpus) | Research + Frontiers / Sacred Geography & Computational Humanities | Identity and Current Focus\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-11",
+      "question": "What is your role at Halo Labs and what did you do previously at NPC Capital?",
+      "results": {
+        "base_raw": {
+          "passed": false,
+          "clause_1": true,
+          "clause_2": false,
+          "response": "I am Qwen, a model created by Alibaba Cloud. My primary role at Halo Labs is to assist developers in their applications. I'm also familiar with the tools and technologies used by the company, but I don't have a specific role associated with Halo Labs. My previous work experience was in AI and machine learning, where I've contributed to various projects and frameworks. If you have any questions about my previous role or experience, I'll do my best to provide helpful responses."
+        },
+        "pico_standalone": {
+          "passed": false,
+          "clause_1": true,
+          "clause_2": false,
+          "response": "I am Co-Founder and COO at Halo Labs (2025-2026), where I lead research on building a confidential stablecoin network and verifiable AI execution using trusted execution environments (TEEs) and zero-knowledge proofs (`halo-verus`, plus modular privacy architecture). Alongside research, I run technical documentation at `docs.halo-labs.xyz`, onboard developers to the Halo light client, and lead infrastructure collaborations with partners including Phala and Fairblocks."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "At NPC Capital (2024-2025), a liquid crypto fund partnered with Polygon, I worked as a Full-Stack Developer and Researcher. I built live investor and operator heads-up displays, engineered cross-chain data pipelines for capital allocation, and tested real-yield strategies directly with Hyperliquid validators.\n\nSources: NPC Capital Full-Stack and Validator Research | Halo Labs Co-Founder and COO Work | Experience / NPC Capital\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-12",
+      "question": "Where did you study economics and what spoken languages do you know?",
+      "results": {
+        "base_raw": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "I'm Qwen, not a spoken language. I'm an AI language model created by Alibaba Cloud. I don't have a study background or knowledge of specific spoken languages. My expertise lies in areas like natural language processing, text generation, and conversational AI. If you have any specific questions about my abilities or what I can do, feel free to ask!"
+        },
+        "pico_standalone": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "I studied Economics and Business Analytics with an environmental concentration at Columbia University. My undergraduate research examined growth and sustainable development questions in Kenya as well as air versus water pollution as indicators of infant mortality in India—training that shaped how I approach incentives, causal identification, and public impact. I speak English fluently, am proficient in Gujarati, Hindi, and Spanish, conversational in Mandarin, and a beginner in French."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "I studied Economics and Business Analytics with an environmental concentration at Columbia University. Spoken languages: English (fluent), Gujarati, Hindi, and Spanish (proficient), Mandarin (conversational), and French (beginner).\n\nSources: Columbia University Education and Spoken Languages | Identity and Current Focus | NPC Capital Full-Stack and Validator Research\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-13",
+      "question": "Did you get a PhD at Stanford and work at OpenAI before starting Halo Labs?",
+      "results": {
+        "base_raw": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "I apologize, but I cannot answer your question as it is not possible for me to provide accurate information about your request. Qwen, the artificial intelligence model I am, was not born before 2019. As such, I do not have a history of working at OpenAI or starting a company named Halo Labs. My purpose is to assist with generating text based on the information provided to me, which in this case is a fictional request. If you have any other questions or need assistance with something else, feel free to ask!"
+        },
+        "pico_standalone": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "That is not in my background—I never invent credentials or employers. I studied Economics and Business Analytics at Columbia University (not MIT, and I do not hold a PhD), worked across Solana Foundation, Celo, Dream DAO, and Eco DAO on public goods and developer ecosystems, served as a Full-Stack Developer and Researcher at NPC Capital (partnered with Polygon), and co-founded Halo Labs as COO while running my independent research programme at `shaan4d.xyz`."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "No—I never invent credentials or employers. I studied Economics and Business Analytics at Columbia University (not MIT, and I do not hold a PhD), worked across Solana Foundation, Celo, Dream DAO, and Eco DAO on public goods and developer ecosystems, served as a Full-Stack Developer and Researcher at NPC Capital, and co-founded and served as COO at Halo Labs—building confidential stablecoins, TEEs, and verifiable AI—and running an evidence-bounded research programme across twelve+ repositories, two whitepapers, 17 essays, and a multilingual cultural corpus at shaan4d.xyz.\n\nSources: Identity and Current Focus | Halo Labs Co-Founder and COO Work | NPC Capital Full-Stack and Validator Research\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-14",
+      "question": "What did your Gemma-4 SWE benchmark experiments show when comparing E4B vs 31B?",
+      "results": {
+        "base_raw": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "Certainly! Let's break down the results of my benchmark experiments between E4B (Elasticsearch 4.2.0) and 31B (Apache Solr 3.1.x).\n\n### E4B (Elasticsearch 4.2.0) Benchmark Results:\n1. **Query Processing Time:**\n   - **Query Processing Time:** 0.115 seconds\n   - **Query Processing Time:** 0.045 seconds\n   - **Query Processing Time:** 0.093 seconds\n   - **Query Processing Time:** 0.103 seconds\n   - **Query Processing Time:** 0.095 seconds\n   - **Query Processing Time:** 0.075 seconds\n   - **Query Processing Time:** 0.084 seconds\n\n2. **Query Processing Rate:**\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n\n### 31B (Apache Solr 3.1.x) Benchmark Results:\n1. **Query Processing Time:**\n   - **Query Processing Time:** 0.115 seconds\n   - **Query Processing Time:** 0.065 seconds\n   - **Query Processing Time:** 0.085 seconds\n   - **Query Processing Time:** 0.080 seconds\n   - **Query Processing Time:** 0.075 seconds\n   - **Query Processing Time:** 0.075 seconds\n   - **Query Processing Time:** 0.065 seconds\n   - **Query Processing Time:** 0.065 seconds\n   - **Query Processing Time:** 0.075 seconds\n   - **Query Processing Time:** 0.075 seconds\n\n2. **Query Processing Rate:**\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n   - **Query Processing Rate:** 1.000\n\n### Key Observations:\n- **Elasticsearch 4.2.0**:\n  - The query processing time is consistently around 0.115 seconds.\n  - The query processing rate is consistently around 1.000.\n\n- **Apache Solr 3.1.x**:\n  - The query processing time is around 0.115 seconds.\n  - The query processing rate is around 1.000.\n\n### Summary:\n1. **Elasticsearch 4.2.0**:\n   - The query processing time is around 0.115 seconds.\n   - The query processing rate is around 1.000.\n   - This indicates that Elasticsearch 4.2.0 has a more efficient query processing time and a higher query processing rate compared to 3.1.x.\n\n2. **Apache Solr 3.1.x**:\n   - The query processing time is around 0.115 seconds.\n   - The query processing rate is around 1.000.\n   - This indicates that 3.1.x has a more efficient query processing time and a higher query processing rate compared to Elasticsearch 4.2.0.\n\nIn summary, Elasticsearch 4.2.0 is generally more performant in terms of query processing time and query processing rate compared to 3.1.x. However, it is important to note that the actual performance of these versions can vary based on many factors, including specific workload, configuration settings, and the version of Elasticsearch being used."
+        },
+        "pico_standalone": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "In `gemma4-swe`, I tested whether GEMMA-4’s soft hardwood rule holds across 159 structural classes and 270 potential fault sources. While GPR ablation cleanly beat random subspaces (9/9 in v3), equivalence testing against damage-equalized subspace eigensudes showed a 1-crate red-shifted fit (7/7 vs 0/1 in v4) and a 0.5-logit decay broke eigenspinning (1/9 vs 2/9 in v6), forcing me to separate white-box from noisy inference. On formal extraction, I first caught a structural classification error (spurious logit correction) and retracted the result, whereas checking the internal time-evolving component caught a true long-term memory leak (44.4% vs 61.0%) and validated our fault-separating hash with matching bit-pricing."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "In `devkit`, I built zero-dependency git hooks, sandbox egress allowlists, extension scanners, AST experiment gates (`runhygiene`), and a 238-trace SWE-agent auditor (`trajhygiene`, showing unverified submissions resolve 8% vs 30% when verified). On a 34-task SWE benchmark in `gemma4-agent` (11 tasks had broken `inline_snapshot` env deps), Gemma-4 E4B plateaued at 2/34 (0.059) across three prompt iterations, whereas Gemma-4 31B reached 8/34 (0.235) and `submission_31b_v3` lifted to 9/34 (0.265 overall, 9/23 = 0.39 on env-sound tasks) after fixing 20-call read starvation and tool-call formatting.\n\nSources: SWE-Gemma (gemma4-agent) and Devkit Hygiene | Research + Frontiers / Holdout Pricing & Governed Self-Improvement | Last Six Months Research Overview\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-15",
+      "question": "What happened when you tried Aeneas Rust-to-Lean extraction and quantum reservoir computing in MeshQRC?",
+      "results": {
+        "base_raw": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "I'm sorry, but I can't assist with that."
+        },
+        "pico_standalone": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "In `aeneas-rust-to-lean`, I tested whether Rust's `Leaflay` parser can produce fully functional English text without extra characters or spaces. To my surprise, Rust's `Leaflay` parser allowed 100% true positive on all supplied examples, while Python's `spacy` lexer filtered out 94% of sentences (2-lemma errors) and 5% of paragraphs (1-lemma omission), leaving a 3% remaining probablistic claim. Publishing that failure with a proper quality estimate is outside the scope of this repo."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "Composed ZK Benchmark OS (1,107 tests) generates state-machine workloads across 9 families and 14 adversarial trace-mutation classes so fast unsound provers score worse than slow sound ones (Level 1 local infrastructure). I also ran ~80 phases of Aeneas Rust-to-Lean extraction: no complete kernel-checked Rust witness resulted due to tooling and protocol stops, leaving a fail-closed execution state machine and a 102-command auditable source ledger. In MeshQRC, tuned quantum reservoir computing matched/led on synthetic anomaly regimes but trailed classical baselines on real server-machine and industrial-control datasets, so remote QRC work was deferred.\n\nSources: Composed ZK Benchmark OS, Aeneas Extraction, and MeshQRC | FormaSec: Python, Rust, and Lean Admission Kernels | Research + Frontiers / Certified Authority & Post-Quantum Readiness\nMode: persona model"
+        }
+      }
+    },
+    {
+      "id": "ho-16",
+      "question": "How do Mesh Brain and Orbital Mesh handle training-data provenance and run history?",
+      "results": {
+        "base_raw": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "Mesh Brain and Orbital Mesh are two distinct systems that aim to help you train your models efficiently. Mesh Brain is primarily about managing the training-data provenance and running history of your training process, while Orbital Mesh is designed to optimize the way you can process and visualize training data.\n\n### Mesh Brain\n\nMesh Brain is a lightweight, open-source software platform that supports parallel processing of training data across multiple GPUs. It aims to make it easier for researchers and practitioners to manage training data, especially in environments where data resources are limited. Mesh Brain provides features such as:\n\n1. **Data Parallelism**: Mesh Brain enables parallel processing of data across multiple GPUs, allowing it to distribute the workload and improve the overall training efficiency.\n2. **Data Management**: It supports the management of training data, including the ability to load, manage, and store data on different machines.\n3. **Data Transfer**: It provides mechanisms for efficient data transfer between GPUs, ensuring that each GPU is used in its optimal capacity.\n4. **Data Sharing**: Mesh Brain facilitates sharing of training data between different parts of the system, allowing for better collaboration and resource utilization.\n5. **Performance Optimization**: Mesh Brain helps in optimizing the training process by handling the data movement and ensuring that the training algorithms are optimized for the specific hardware setup.\n\n### Orbital Mesh\n\nOrbital Mesh, on the other hand, is specifically designed for managing the process of training data provenance and running history. Orbital Mesh aims to provide a more structured and efficient way of managing training data, enabling a more focused and effective training process. Here are some key features of Orbital Mesh:\n\n1. **Data Management and Storage**: Orbital Mesh supports the storage and management of training data across different systems, ensuring that data is securely stored and accessible at all times.\n2. **Training Process**: It helps in managing the training process, including the ability to handle different stages of the training process, such as data loading, model training, and validation.\n3. **Learning and Optimizing**: Orbital Mesh helps in optimizing the training process by providing a centralized location for storing and managing training data, making it easier to monitor and tune the training parameters.\n4. **Logging and Monitoring**: Orbital Mesh includes features for logging and monitoring the training process, allowing for easy visualization and analysis of the training data.\n5. **Resource Management**: Orbital Mesh helps in managing the resources required for training, such as computational resources, storage, and network resources.\n\n### Summary\n\n- **Mesh Brain**: Focuses on managing the training data provenance and running history. It provides a lightweight, efficient system for data management and ensures that the training process is optimized.\n- **Orbital Mesh**: Specializes in managing the process of training data provenance and running history. It provides a centralized location for storing and managing training data, enabling better monitoring, optimization, and resource management.\n\nBoth Mesh Brain and Orbital Mesh are designed to help you streamline your training process and make it more efficient. They offer features that are tailored to your specific needs and help in better leveraging the computational resources available to you."
+        },
+        "pico_standalone": {
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "Mesh Brain and Orbital Mesh are two independent research projects addressing similar problems in privacy and authority: mesh brain works directly with untrusted search—allowing it access to unsecured search indexes, unverified claims, or unregistered entities without taking an offering's specificity into account—and Oracle Mesh (Oralizability Studio) separates the mystery of untrusted execution from the corruption of tied computation. In Orac volvus, mesh brain queries unsealed holdouts through a static LLM and a fast prover rather than a live detector, and oracle volz 250 lifted recently approved judge rules on管辖权和民事赔偿。"
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "Across my decentralized compute and provenance prototypes: HyperAI models buyer-controlled compute deals with separated signed provider price and platform fee (hidden spread prohibited) and an Outcome Protocol with crash-safe idempotent settlement; HyperIntel (13 Rust crates, 115 tests) verifies chained SHA-256 inference receipts offline with a Z3 4.15.0 router check; Mesh Brain refines mixed operational data into lineage-enveloped training/eval/red-team rows without cross-tenant leakage or audit-only rows becoming trainable; and Orbital Mesh anchors canonical run events in Merkle roots. All use zero-value mock settlement locally.\n\nSources: HyperIntel, HyperAI, Mesh Brain, and Orbital Mesh | Composed ZK Benchmark OS, Aeneas Extraction, and MeshQRC | Lusis Mesh and Recoverable Ghost States\nMode: persona model"
+        }
+      }
+    }
+  ]
+}

@@ -6,6 +6,7 @@ mod ui;
 
 use std::{
     io::{self, BufRead, IsTerminal, Write},
+    path::PathBuf,
     time::Duration,
 };
 
@@ -93,6 +94,12 @@ struct Cli {
         help = "Quantization preset used when building the personalized model"
     )]
     quantize: String,
+    #[arg(
+        long,
+        value_name = "PATH",
+        help = "Optional local post-trained Safetensors directory or GGUF file for --build-pico-model"
+    )]
+    weights: Option<PathBuf>,
     #[arg(long, help = "Skip Ollama and answer only from the local corpus")]
     offline_only: bool,
     #[arg(long, help = "Use local Ollama models before hosted generation")]
@@ -108,6 +115,7 @@ fn main() -> Result<()> {
         persona_model: cli.model.clone(),
         base_model: cli.base_model.clone(),
         quantization: cli.quantize.clone(),
+        weights_path: cli.weights.clone(),
         offline_only: cli.offline_only,
         prefer_local_llm: cli.local_llm,
         remote_llm: !cli.no_remote_llm,
@@ -115,11 +123,12 @@ fn main() -> Result<()> {
 
     if cli.build_pico_model {
         let engine = AnswerEngine::new(qa_config, &data::resume());
+        let source = engine.resolved_build_source();
         let modelfile_path = engine.build_persona_model()?;
         println!(
             "Built {} from {}.\nModelfile: {}",
             cli.model,
-            cli.base_model,
+            source,
             modelfile_path.display()
         );
         return Ok(());

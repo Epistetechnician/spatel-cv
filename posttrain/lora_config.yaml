@@ -1,0 +1,25 @@
+model: "Qwen/Qwen2.5-0.5B-Instruct"
+train: true
+optimizer: "adamw"
+data: "/Users/shaanp/Documents/GitHub/patelshaan/spatel-cv/posttrain/data"
+seed: 20261118
+num_layers: -1
+batch_size: 4
+iters: 260
+val_batches: -1
+learning_rate: 0.0001
+lr_schedule:
+  name: "cosine_decay"
+  warmup: 20
+  arguments: [0.0001, 240, 1e-05]
+steps_per_report: 20
+steps_per_eval: 50
+adapter_path: "/Users/shaanp/Documents/GitHub/patelshaan/spatel-cv/posttrain/adapters"
+save_every: 130
+max_seq_length: 2048
+grad_checkpoint: true
+lora_parameters:
+  rank: 16
+  dropout: 0.05
+  scale: 2.0
+mask_prompt: true

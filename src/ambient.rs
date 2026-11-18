@@ -184,7 +184,7 @@ fn draw_clouds(canvas: &mut Canvas, tick: u64, color: Color) {
 fn draw_sun(canvas: &mut Canvas, tick: u64) {
     let x = (canvas.width as i32 - 10).max(3);
     let y = 1;
-    let ray = if tick % 2 == 0 { '+' } else { 'x' };
+    let ray = if tick.is_multiple_of(2) { '+' } else { 'x' };
     canvas.put(x + 2, y, ray, Color::Yellow);
     canvas.text(x, y + 1, "\\ | /", Color::Yellow);
     canvas.text(x, y + 2, "- O -", Color::Yellow);
@@ -216,7 +216,7 @@ fn draw_rain(canvas: &mut Canvas, tick: u64, storm: bool) {
     for x in (0..canvas.width).step_by(step) {
         let y = ((x as u64 * 5 + tick * 2) % canvas.height as u64) as i32;
         let ch = if storm {
-            if tick % 2 == 0 { '\\' } else { '/' }
+            if tick.is_multiple_of(2) { '\\' } else { '/' }
         } else {
             '|'
         };
@@ -260,7 +260,7 @@ fn draw_fireflies(canvas: &mut Canvas, tick: u64) {
     for index in 0..(canvas.width / 10).max(3) {
         let x = ((index * 19 + tick as usize) % canvas.width) as i32;
         let y = (lower + ((index * 5 + tick as usize / 2) % (canvas.height - lower).max(1))) as i32;
-        let ch = if (index as u64 + tick) % 4 == 0 {
+        let ch = if (index as u64 + tick).is_multiple_of(4) {
             '*'
         } else {
             '.'
@@ -272,7 +272,7 @@ fn draw_fireflies(canvas: &mut Canvas, tick: u64) {
 fn draw_signal_line(canvas: &mut Canvas, tick: u64, color: Color) {
     let y = (canvas.height as i32 / 2).max(1);
     for x in 0..canvas.width {
-        if (x as u64 + tick) % 7 == 0 {
+        if (x as u64 + tick).is_multiple_of(7) {
             canvas.put(x as i32, y, '.', color);
         }
     }
@@ -281,7 +281,7 @@ fn draw_signal_line(canvas: &mut Canvas, tick: u64, color: Color) {
 fn draw_ground(canvas: &mut Canvas) {
     let y = canvas.height as i32 - 1;
     for x in 0..canvas.width {
-        let ch = if x % 5 == 0 { '^' } else { '_' };
+        let ch = if x.is_multiple_of(5) { '^' } else { '_' };
         canvas.put(x as i32, y, ch, Color::Green);
     }
 }
