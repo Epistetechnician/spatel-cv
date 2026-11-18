@@ -1,3 +1,4 @@
+mod ambient;
 mod app;
 mod data;
 mod persona;
@@ -94,6 +95,10 @@ struct Cli {
     quantize: String,
     #[arg(long, help = "Skip Ollama and answer only from the local corpus")]
     offline_only: bool,
+    #[arg(long, help = "Use local Ollama models before hosted generation")]
+    local_llm: bool,
+    #[arg(long, help = "Disable hosted Anthropic-compatible generation")]
+    no_remote_llm: bool,
 }
 
 fn main() -> Result<()> {
@@ -104,6 +109,8 @@ fn main() -> Result<()> {
         base_model: cli.base_model.clone(),
         quantization: cli.quantize.clone(),
         offline_only: cli.offline_only,
+        prefer_local_llm: cli.local_llm,
+        remote_llm: !cli.no_remote_llm,
     };
 
     if cli.build_pico_model {
@@ -182,6 +189,7 @@ fn run_event_loop(
     loop {
         let area = terminal.size()?;
         app.sync_viewport(area.width, area.height);
+        app.advance_ambient();
         terminal.draw(|frame| ui::render(frame, app))?;
 
         if !event::poll(Duration::from_millis(200))? {

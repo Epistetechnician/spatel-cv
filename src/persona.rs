@@ -1,10 +1,11 @@
 use std::{
     env, fs,
     path::PathBuf,
-    process::{Command, Output},
+    process::{Command, Output, Stdio},
 };
 
 use anyhow::{Context, Result, bail};
+use serde_json::{Value, json};
 
 use crate::data::Resume;
 #[cfg(test)]
@@ -13,6 +14,8 @@ use crate::data::resume;
 pub const DEFAULT_PERSONA_MODEL: &str = "shaanpatel-cv-pico";
 pub const DEFAULT_BASE_MODEL: &str = "qwen2.5:0.5b";
 pub const DEFAULT_QUANTIZATION: &str = "q4_K_M";
+pub const DEFAULT_REMOTE_MODEL: &str = "MiniMax-M2";
+pub const DEFAULT_REMOTE_BASE_URL: &str = "https://api.minimax.io/anthropic";
 
 #[derive(Clone, Debug)]
 pub struct QaConfig {
@@ -20,6 +23,8 @@ pub struct QaConfig {
     pub base_model: String,
     pub quantization: String,
     pub offline_only: bool,
+    pub prefer_local_llm: bool,
+    pub remote_llm: bool,
 }
 
 impl Default for QaConfig {
@@ -29,6 +34,8 @@ impl Default for QaConfig {
             base_model: DEFAULT_BASE_MODEL.to_string(),
             quantization: DEFAULT_QUANTIZATION.to_string(),
             offline_only: false,
+            prefer_local_llm: false,
+            remote_llm: true,
         }
     }
 }
@@ -79,6 +86,7 @@ pub enum AnswerMode {
     GroundedOnly,
     BaseModel(String),
     PersonaModel(String),
+    RemoteModel(String),
 }
 
 impl AnswerMode {
@@ -87,8 +95,16 @@ impl AnswerMode {
             Self::GroundedOnly => "grounded corpus",
             Self::BaseModel(_) => "base model",
             Self::PersonaModel(_) => "persona model",
+            Self::RemoteModel(_) => "hosted model",
         }
     }
+}
+
+#[derive(Clone, Debug)]
+struct RemoteProvider {
+    base_url: String,
+    api_key: String,
+    model: String,
 }
 
 #[derive(Clone, Debug)]
@@ -170,7 +186,33 @@ impl AnswerEngine {
             return Ok(self.unknown_answer(trimmed));
         }
 
-        if !self.config.offline_only {
+        if !self.config.offline_only && self.config.prefer_local_llm {
+            if self.model_exists(&self.config.persona_model) {
+                if let Ok(body) =
+                    self.generate_with_model(&self.config.persona_model, trimmed, &retrieved)
+                {
+                    return Ok(self.finalize_answer(
+                        body,
+                        AnswerMode::PersonaModel(self.config.persona_model.clone()),
+                        &retrieved,
+                    ));
+                }
+            }
+        }
+
+        if !self.config.offline_only
+            && self.config.remote_llm
+            && let Some(provider) = RemoteProvider::from_env()
+            && let Ok(body) = self.generate_with_remote(&provider, trimmed, &retrieved)
+        {
+            return Ok(self.finalize_answer(
+                body,
+                AnswerMode::RemoteModel(provider.model),
+                &retrieved,
+            ));
+        }
+
+        if !self.config.offline_only && !self.config.prefer_local_llm {
             if self.model_exists(&self.config.persona_model) {
                 if let Ok(body) =
                     self.generate_with_model(&self.config.persona_model, trimmed, &retrieved)
@@ -378,6 +420,79 @@ impl AnswerEngine {
             .with_context(|| format!("failed to generate answer with model {model}"))
     }
 
+    fn generate_with_remote(
+        &self,
+        provider: &RemoteProvider,
+        question: &str,
+        retrieved: &[RetrievedDocument],
+    ) -> Result<String> {
+        let url = format!("{}/v1/messages", provider.base_url.trim_end_matches('/'));
+        let request = json!({
+            "model": &provider.model,
+            "max_tokens": 700,
+            "temperature": 0.25,
+            "system": render_system_prompt(&self.corpus),
+            "messages": [{
+                "role": "user",
+                "content": render_grounded_prompt(question, retrieved),
+            }],
+        });
+        let api_key_header = format!("x-api-key: {}", provider.api_key);
+        let payload = request.to_string();
+
+        let output = Command::new("curl")
+            .args([
+                "-sS",
+                "--fail-with-body",
+                "--max-time",
+                "20",
+                "-X",
+                "POST",
+                "-H",
+                "content-type: application/json",
+                "-H",
+                "anthropic-version: 2023-06-01",
+                "-H",
+                &api_key_header,
+                "-d",
+                &payload,
+                &url,
+            ])
+            .stdout(Stdio::piped())
+            .stderr(Stdio::piped())
+            .output()
+            .context("failed to start curl for hosted model request")?;
+
+        let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
+        if !output.status.success() {
+            let stderr = String::from_utf8_lossy(&output.stderr).trim().to_string();
+            bail!("hosted model request failed: {stderr} {stdout}");
+        }
+
+        let parsed: Value =
+            serde_json::from_str(&stdout).context("failed to parse hosted model response")?;
+        let text = parsed
+            .get("content")
+            .and_then(Value::as_array)
+            .into_iter()
+            .flatten()
+            .find_map(|content| {
+                if content.get("type").and_then(Value::as_str) == Some("text") {
+                    content.get("text").and_then(Value::as_str)
+                } else {
+                    None
+                }
+            })
+            .unwrap_or_default()
+            .to_string();
+
+        if text.trim().is_empty() {
+            bail!("hosted model returned no text");
+        }
+
+        Ok(text)
+    }
+
     fn ensure_model_available(&self, model: &str) -> Result<()> {
         if self.model_exists(model) {
             return Ok(());
@@ -419,6 +534,26 @@ impl AnswerEngine {
         }
 
         Ok(output)
+    }
+}
+
+impl RemoteProvider {
+    fn from_env() -> Option<Self> {
+        let api_key = env::var("ANTHROPIC_API_KEY")
+            .or_else(|_| env::var("MINIMAX_API_KEY"))
+            .ok()?;
+        let base_url = env::var("ANTHROPIC_BASE_URL")
+            .or_else(|_| env::var("ANTHROPIC_HOST"))
+            .unwrap_or_else(|_| DEFAULT_REMOTE_BASE_URL.to_string());
+        let model = env::var("ANTHROPIC_MODEL")
+            .or_else(|_| env::var("MINIMAX_MODEL"))
+            .unwrap_or_else(|_| DEFAULT_REMOTE_MODEL.to_string());
+
+        Some(Self {
+            base_url,
+            api_key,
+            model,
+        })
     }
 }
 
