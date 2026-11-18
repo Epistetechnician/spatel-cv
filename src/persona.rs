@@ -862,12 +862,13 @@ fn seed_persona_documents() -> Vec<KnowledgeDocument> {
         ),
         doc(
             "hsi-lab-cl7b-detail",
-            "HSI Lab and cl7b: Synthetic Data and Delta Composition",
+            "HSI Lab and cl7b: Synthetic Data and OrthoDelta Composition",
             "writing",
-            "In HSI Lab (E1-E10, 25 stdlib-verifiable receipts), typed event codecs beat raw text by +0.640 [0.614, 0.667] at matched byte budgets, and verifier-filtered synthetic experience paid +0.238 (+0.141 above pool-size control) in rule worlds, but hit a -0.0025 [-0.025, +0.020] null on Qwen2.5-7B real code. In `cl7b` on Qwen3-1.7B, summing independent rank-16 task deltas broke general capability (wikitext NLL 15.96 fp16, 17.74 4-bit) whereas on-policy `replay_kl` consolidation preserved 0.997 retention.",
+            "In HSI Lab (E1-E10, 25 stdlib-verifiable receipts), typed event codecs beat raw text by +0.640 [0.614, 0.667] at matched byte budgets, and verifier-filtered synthetic experience paid +0.238 (+0.141 above pool-size control) in rule worlds, while hitting a -0.0025 [-0.025, +0.020] null on Qwen2.5-7B real code. In `cl7b` on Qwen3-1.7B-Base, unrouted sums of independent rank-16 task deltas broke capability (`cl_delta.py` wikitext NLL 15.96 fp16, 17.74 4-bit), whereas our frozen-prefix (`L0..L7`) + `L8` Mahalanobis-routed & nullspace-orthogonal delta algebra (`cl_orthodelta_mlx.py`, 3 seeds, zero replay) achieves 94.4% [90.6%..96.9%] 4-task composed accuracy on fp (beating full-MLP `sft` 82.5% and lifting oldest-task retention from 58.3% to 95.8%) and 81.3% on 4-bit group-64 weights, with +0.00002 WikiText NLL drift (3.2939 vs `replay_kl` 3.60), 1.00 real-capital/arithmetic retention, and 94.4%-96.1% O(1) selective-unlearning retention (`remove_t0`, `remove_t2`).",
             &[
                 "hsi-lab",
                 "cl7b",
+                "orthodelta",
                 "synthetic",
                 "continual-learning",
                 "replay-kl",
@@ -877,9 +878,9 @@ fn seed_persona_documents() -> Vec<KnowledgeDocument> {
         ),
         doc(
             "mech-interp-jspace-detail",
-            "Mech-Interp Unified and J-Space Pilot",
+            "Mech-Interp Unified, 12/12 Unified Auditor, and J-Space Pilot",
             "writing",
-            "Mechanistic Interpretability Unified replicated null-calibrated agreement neuron sets out of family on Qwen3-1.7B-Base (1.437 causal effect vs 0.044 control max, p = 0.000999), Pythia-2.8B, and GPT-2 XL (Pythia-1.4B missed the 0.5-logit floor; `V60` showed dtype/device shift), while its 200-seed F2 planted-flaw audit proved static rules gates catch 0/8 instrument flaws and informed probes catch 3/8. Companion J-Space Pilot runs on OLMo-2-7B (up to 4,000 prompts + 1,000-prompt refit) and Tulu-3 proved Jacobian subspace ablation is statistically equivalent to norm-matched top-PCA on DPO (0.00 [-0.05, +0.05] gap).",
+            "Mechanistic Interpretability Unified replicated null-calibrated agreement neuron sets out of family on Qwen3-1.7B-Base (1.437 causal effect vs 0.044 control max, p = 0.000999), Pythia-2.8B, and GPT-2 XL (Pythia-1.4B missed the 0.5-logit floor; `V60` showed dtype/device shift). While F2 showed static rules gates catch 0/8 planted flaws and initial probes catch 3/8, combining F2 probes, donor-swap sufficiency, `jspace-pilot` `pcanorm` & level adjustment, `theseus-lab` permutation-aligned Jacobian checks, and `ahcl` matched-progress controls (`primitives/interp_bench.py`, 2,800 trials) detects 12/12 flaw classes (8/8 F2 + 4/4 held-out, 100% TPR at 0.0% FPR). Companion J-Space Pilot runs on OLMo-2-7B (up to 4,000 prompts + 1,000-prompt refit) and Tulu-3 proved Jacobian subspace ablation is equivalent to norm-matched top-PCA on DPO (0.00 [-0.05, +0.05] gap; -0.019 across 9 matched margin deciles) and proved the +1.74 to +2.70 logit dose-0 damage comes from uncentered dose-0 mean removal (0.000 shift under mean-preserving clamps).",
             &[
                 "mech-interp",
                 "interpretability",
@@ -1000,7 +1001,7 @@ fn seed_persona_documents() -> Vec<KnowledgeDocument> {
             "kailas-corpus-detail",
             "Mount Kailas Sacred Geography and Complex Time (kailas-corpus)",
             "writing",
-            "In `kailas-corpus`, I tested complex time (`kime`) vs `(lap, progress)` around Mount Kailas (Kang Rinpoche) across 2,362 blind-labeled passages in 15+ languages and 195 dual-coded pilgrimage episodes across 20 books (Krippendorff alpha = 0.82). After catching and retracting a 3%-precision embedding confound (clean Sanskrit null -3.4, n = 574), episode coding falsified Kailas-specific decoupling (1.3%, 5.6% pooled vs 10% bar; 117/124 Kailas episodes fit `(lap, progress)`) while discovering genuine ritual-calendar decoupling in Hajj and Holy Land accounts (14.7%). Blinded 115-row Tibetan/Bon and 233-row Sanskrit philologist handoff sheets are ready.",
+            "In `kailas-corpus`, I tested complex time (`kime`) vs `(lap, progress)` around Mount Kailas (Kang Rinpoche / Tise / Yungdrung Gutsek) across 2,626 blind-labeled passages in 15+ languages and 416+ dual-coded pilgrimage windows (Krippendorff alpha = 0.86). Decomposing the 2,362 v2 labels and recovering 264 classical Tibetan `ཏི་སེ` (N=173, 113 works) and Bon Kangyur `གཡུང་དྲུང་དགུ་བརྩེགས` (N=109, 32 works; overlap kappa = 0.90) passages resolved the pooled Sanskrit/Tibetan nulls into a double dissociation: Kailas/Tise/Yungdrung Gutsek is significantly enriched in spatial axis/mandala cosmology (`cat e`: en +1.22, sa +3.38, bo Tise +21.1, full-text Kangyur/Bon +42.0, Bon +44.1 plus +15.7 on `cat c` coexisting realms), while depleted or tightly null on multi-temporal concepts (`a,b,d,f`: en -6.37, sa -8.43, hi -23.33, bo +1.2/+1.5). Across 368 public-domain windows (254 experience episodes), calendar-decoupled time concentrates in Hajj/Holy Land liturgy (16.7% vs 3.0% Kailas explorers, p = 0.0022), while locator-only full-circuit coding of Colin Thubron's *To a Mountain in Tibet* (48 episodes, 35 along r in [0, 1], alpha = 0.83) shows 100% multi-frame braiding, 20.0% strict (34.3% loose) route-aligned mandala phase (9x higher than 19th-c. surveyors, p = 0.0017), and 0.0% (0/24) calendar decoupling on Stages 2-5 past the Stage 1 Saga Dawa flagpole gathering.",
             &[
                 "kailas",
                 "kailash",
