@@ -29,6 +29,7 @@ use ratatui::{Terminal, backend::CrosstermBackend};
         ArgGroup::new("section")
             .args([
                 "about",
+                "research",
                 "foundations",
                 "experience",
                 "education",
@@ -43,6 +44,8 @@ use ratatui::{Terminal, backend::CrosstermBackend};
 struct Cli {
     #[arg(long, help = "Open on the overview section")]
     about: bool,
+    #[arg(long, help = "Open on the research and breakthroughs section")]
+    research: bool,
     #[arg(long, help = "Open on the foundations section")]
     foundations: bool,
     #[arg(long, help = "Open on the experience section")]
@@ -145,6 +148,8 @@ impl Cli {
     fn section(&self) -> Option<SectionId> {
         if self.about {
             Some(SectionId::Overview)
+        } else if self.research {
+            Some(SectionId::Research)
         } else if self.foundations {
             Some(SectionId::Foundations)
         } else if self.experience {
@@ -388,10 +393,24 @@ mod tests {
         let output = format_resume(&app.resume);
 
         assert!(output.contains("OVERVIEW"));
+        assert!(output.contains("RESEARCH + FRONTIERS"));
         assert!(output.contains("EXPERIENCE"));
         assert!(output.contains("INTERESTS + RESOURCES"));
         assert!(output.contains("INSTALL"));
         assert!(output.contains("SHAAN PATEL"));
+        assert!(output.contains("https://shaan4d.xyz"));
+    }
+
+    #[test]
+    fn research_section_prints_breakthrough_pillars() {
+        let app = App::new(Some(SectionId::Research), QaConfig::default());
+        let output = format_section(app.selected_section());
+
+        assert!(output.starts_with("RESEARCH + FRONTIERS\n"));
+        assert!(output.contains("Holdout Ledger"));
+        assert!(output.contains("FormaSec"));
+        assert!(output.contains("Statebook"));
+        assert!(output.contains("Sacred Geography"));
     }
 
     #[test]

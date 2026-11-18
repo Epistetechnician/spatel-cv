@@ -79,7 +79,10 @@ fn render_sections(frame: &mut Frame<'_>, app: &App, area: Rect) {
         .sections
         .iter()
         .map(|section| {
-            let style = if section.id == crate::data::SectionId::Interests {
+            let style = if matches!(
+                section.id,
+                crate::data::SectionId::Research | crate::data::SectionId::Interests
+            ) {
                 Style::new().fg(Color::Magenta).bold()
             } else {
                 Style::new()

@@ -48,7 +48,8 @@ spatel
 Optional CLI entry points:
 
 ```sh
-spatel --about --print # open the about section   
+spatel --about --print # open the about section
+spatel --research --print # open the research & breakthroughs section
 spatel --experience --print # open the experience section
 spatel --links --print # open the links section
 spatel --interests --print # open the interests section
