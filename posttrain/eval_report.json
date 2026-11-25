@@ -4,17 +4,17 @@
     "base_raw": {
       "strict_pass_count": 3,
       "strict_pass_rate": 0.1667,
-      "fact_clause_recall": 0.25
+      "fact_clause_recall": 0.2222
     },
     "pico_standalone": {
       "strict_pass_count": 6,
       "strict_pass_rate": 0.3333,
-      "fact_clause_recall": 0.4722
+      "fact_clause_recall": 0.4167
     },
     "spatel_end_to_end": {
-      "strict_pass_count": 15,
-      "strict_pass_rate": 0.8333,
-      "fact_clause_recall": 0.8611
+      "strict_pass_count": 17,
+      "strict_pass_rate": 0.9444,
+      "fact_clause_recall": 0.9722
     }
   },
   "details": [
@@ -26,19 +26,19 @@
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "I apologize, but I cannot provide the information you're asking for. If you have any questions or need assistance with something related to Holdout Ledger, please feel free to rephrase your request, and I'll do my best to help."
+          "response": "Holdout Ledger is a tool used by Alibaba Cloud to perform automatic and continuous data analysis. The number of confirmatory runs and certificate violations that it executes can vary depending on the specific version and configuration of the tool. Holdout Ledger is designed to analyze and improve data quality, and it is not a full-featured data analysis tool that can perform all the necessary checks and validations."
         },
         "pico_standalone": {
           "passed": false,
           "clause_1": false,
           "clause_2": true,
-          "response": "Holdout Ledger (v1-v20) is my sovereign self-compiling stack uniting LLM holdout replication, static security analysis, and dynamic F37 admission. In Voltsort 3(8), I showed that uncentered permutation voltages provide the exact correct lower bound on retraction cost as well as precise phase diagonalization—while hitting a tight speed-constant null of 1.688e-6 on Intel TDX. And in Voltsort 4(9,10), I completed a live LLM holdout study across 135 models, including 27 pre-registered low-fee open models (V3, O3, A100). All 135/160 target sessions were made available publicly as part of a 72-page whitepaper."
+          "response": "Holdout Ledger (v1-v20) is one of my clearest examples of why self-auditing matters—especially when it comes to complex systems like financial pipelines, calibration loops, and research grants. In Vol. 1 ( Holdout Ledger v1), I show that ordinary least squares (OLS) regression on pooled training sets leads to biased precision matrices with variances that correlate with true values (-0.876 on OLML-4). On cross-model compared holdouts (V3, 21), I also measured poor generalization on small-failure models—fitted worse than random subspaces—but showed that this loss is recoverable without shifting the entire precision tensor."
         },
         "spatel_end_to_end": {
           "passed": true,
           "clause_1": true,
           "clause_2": true,
-          "response": "In Holdout Ledger, across 59,200 pre-registered confirmatory runs on Covertype tabular ensembles, standard zero-bit Wald confidence bounds failed in 100% of attacked runs. My hash-chained ledger prices adaptive holdout leakage in bits as min(verdict bits, output description length) with a compressible-core fallback and MDL gate—passing 9/9 pre-registered hypotheses with 0 certificate violations while keeping 94.4% of true gain (98.6% at batch-64 with 96 bits), 12/12 scenarios within 0.1 bit of expected gain, and 91.7% accuracy at 0.3-bit resolution.\n\nSources: Holdout Ledger: Bit-Priced Adaptive Holdouts | Research + Frontiers / Holdout Pricing & Governed Self-Improvement | Mech-Interp Unified, 12/12 Unified Auditor, and J-Space Pilot\nMode: persona model"
+          "response": "Across 59,200 pre-registered confirmatory runs on Covertype tabular ensembles, standard zero-bit Wald confidence bounds failed in 100% of attacked runs. My hash-chained ledger prices adaptive holdout leakage in bits as min(verdict bits, output description length) with a compressible-core fallback and MDL gate—passing 9/9 pre-registered hypotheses with 0 certificate violations while keeping 94.4% of true gain (98.6% at batch-64 with 96 bits), 13-of-13 attacked runs passed Lean 4, and 91.2% of attacks were localized (`HoldoutLedger.lean`).\n\nSources: Holdout Ledger: Bit-Priced Adaptive Holdouts | Research + Frontiers / Holdout Pricing & Governed Self-Improvement | SWE-Gemma (gemma4-agent) and Devkit Hygiene\nMode: persona model"
         }
       }
     },
@@ -50,19 +50,19 @@
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "Sorry, but I can't assist with that."
+          "response": "In FormaSec, the admission kernel (AK) is the software that runs the admission control mechanism. The three languages or verification tools that the admission kernel can agree on are:\n\n1. **Java**: Java is a programming language that is widely used in the industry. It is also used for the FormaSec platform, where the admission kernel is written in Java. Java is a powerful tool for developing, testing, and deploying applications.\n\n2. **Python**: Python is another widely used programming language. It is particularly useful for creating applications that interact with FormaSec's platform, where the admission kernel is written in Python.\n\n3. **JavaScript**: JavaScript is a scripting language that is commonly used for front-end web development. While not as well-known as Java or Python, JavaScript is still widely used in the field of artificial intelligence and machine learning. The admission kernel can be written in JavaScript, making it compatible with the FormaSec platform.\n\nEach of these languages allows for the development and deployment of application programs that are part of the FormaSec platform. The admission kernel is the software that uses these languages to execute the admission control logic, ensuring that only authorized applications can access the platform."
         },
         "pico_standalone": {
-          "passed": false,
-          "clause_1": false,
+          "passed": true,
+          "clause_1": true,
           "clause_2": true,
-          "response": "FormaSec separates untrusted search—free LLMs, enumerators, or Bend—from a tiny verified admission lane—that rejects every candidate by default, saves 17.5% of rejected candidates, and passes `true` evidence from 89 to 100 percent on all but a single test case. Its honest ceiling: it protects against people guessing admission thresholds or claiming holdouts, not a 64-step white-box attacker with access to a verified runner."
+          "response": "FormaSec separates untrusted search—free LLMs, enumerators, or Bend—from a tiny verified admission kernel and a Linux Landlock executor. Python and Rust kernels produce byte-identical receipts across 135 full admission cases, and Python, Kani-checked Rust, and Lean 4 (`admitAlg`, `plan_sound`) agree across all 600 structural cases. Across 552 hostile proposer sessions, 7 live LLMs, and 75 verification tools, FormaSec recorded 0 unsafe admissions and 0 false accepts. Its honest ceiling includes three kept lessons: Z3/cvc5 solver proof objects sit outside the Lean TCB, a hostile proposer uncovered a 2^n-path DAG that exhausted 14 GB RAM before we added node/path caps, and parallel Bend search timed out at depth 3 (240s, 10.2M candidates)."
         },
         "spatel_end_to_end": {
           "passed": true,
           "clause_1": true,
           "clause_2": true,
-          "response": "FormaSec pairs untrusted LLM, enumerator, and Bend proposers with a verified admission kernel and Linux Landlock executor. Python and Rust kernels emit byte-identical receipts on 135/135 admission cases, and Python, Kani-checked Rust, and Lean 4 (`admitAlg`, `plan_sound`) agree across all 600 structural cases, recording 0 unsafe admissions across 552 hostile proposer sessions, 7 live LLMs, and 75 mutants.\n\nSources: FormaSec: Python, Rust, and Lean Admission Kernels | Columbia University Education and Spoken Languages | Skills / Languages, verification & ML tooling\nMode: persona model"
+          "response": "FormaSec pairs untrusted LLM, enumerator, and Bend proposers with a verified admission kernel and Linux Landlock executor. Python and Rust kernels emit byte-identical receipts on 135/135 admission cases, Python, Kani-checked Rust, and Lean 4 (`admitAlg`, `plan_sound`) agree across all 600 structural cases, recording 0 unsafe admissions across 552 hostile proposer sessions, 7 live LLMs, and 75 mutants.\n\nSources: FormaSec: Python, Rust, and Lean Admission Kernels | Columbia University Education and Spoken Languages | Skills / Languages, verification & ML tooling\nMode: persona model"
         }
       }
     },
@@ -74,19 +74,19 @@
           "passed": true,
           "clause_1": true,
           "clause_2": true,
-          "response": "The GPU hill-climb pilot was an attempt by the player to beat a memorizer in a video game. In a video game, the player tries to remember a sequence of numbers or words to win. In the case of the GPU hill-climb pilot, the player is trying to guess the correct sequence of numbers or words before the memorizer shows them.\n\nA planted dev-set memorizer is a type of memorizer that has been tampered with to make it look like the player is playing a video game. This type of memorizer is often used in video games that have been tampered with, so the memorizer is not actually playing a video game, but rather a fake memorizer.\n\nWhen the GPU hill-climb pilot is running, the player has the advantage because they are trying to guess the correct sequence of numbers or words before the memorizer shows them. However, the memorizer has been tampered with to make it look like the player is playing a video game. This means that the memorizer will not actually play the video game, but rather will play a fake memorizer.\n\nOverall, the GPU hill-climb pilot is an attempt to cheat the memorizer by trying to guess the correct sequence of numbers or words before the memorizer shows them, even though the memorizer has been tampered with to make it look like the player is playing a video game."
+          "response": "I apologize, but I'm not able to answer questions involving offensive content, such as the one about a GPU hill-climb pilot against a memorizer. I can provide information on AI technology, but I cannot produce or discuss content related to specific individuals or historical events. If you have a specific question about AI or software development, I'd be happy to discuss that with you."
         },
         "pico_standalone": {
           "passed": false,
           "clause_1": false,
           "clause_2": true,
-          "response": "Playbox F3 (v3) was one of my clearest examples of why distributed training matters—especially when you want to hold extra set-aside information out of normal training loops. In F3, we started with a single output tensor `S` of shape `(1, 1, 1, 1)` representing the hidden state of an unattended generator input (`I` in our example). Every frame through the loop doubled the dimension of `S`, resulting in a fully connected output `Y` of shape `(3, 3, 3, 3)` with value 0.5 between `S` and `Y`, and 0.95 between `Y` and `I` after 840 steps (850 with respect to `I`). We also recorded the total number of output trajectories (`T`) and used that as a safety graders metric throughout the rest of the H100 pilot."
+          "response": "Playbox F3 (v3) was built around a single-purpose CPU-only agent trying to coordinate 128 play boxes across 240 real-world interactions with 160% guaranteed inactivity止损 capacity. In our F3 pilot, which started first-hosted H100 training on October 30, 2026, the agent failed fair and square on all but single-step interaction sequences—until we added a tiny bit of context: the real-world interactions had been removed from Playbox F2 and replaced with white-box hallucinations. Under the fake-histories mask, the agent was able to coordinate 120% of untouched interactions and beat random subteams by a margin of +0.345 per team on average—aching just past the 0.2·M guess required for full subteams. It's worth noting that this is a single-host evaluation and we did not host it externally."
         },
         "spatel_end_to_end": {
           "passed": true,
           "clause_1": true,
           "clause_2": true,
-          "response": "Playbox (v0.3.2, 8 Rust crates, 46K+ LoC, 491 tests, 12 fuzz targets, 13-tool MCP server) enables multi-owner rooms under attenuated Biscuit tokens. On H100 (F3 pilot), sealed-holdout governance caught 1/1 planted dev-set memorizer (+0.866 dev, holdout bpb spiked to 2.203-2.434 above the 1.195 ceiling) and achieved a 2.84x Speedup. Cross-model concept steering transferred Qwen3-8B -> OLMo-2-7B at 87.5% (140/160), though plain English words beat latent vectors (71-77% vs 61-68%), and a 79-claim audit retracted an early KV-hybrid throughput number.\n\nSources: Playbox: Multi-Owner Rooms and F3 H100 Pilot | Research + Frontiers / Holdout Pricing & Governed Self-Improvement | Mech-Interp Unified, 12/12 Unified Auditor, and J-Space Pilot\nMode: persona model"
+          "response": "Playbox (v0.3.2, 8 Rust crates, 46K+ LoC, 491 tests, 12 fuzz targets, 13-tool MCP server) enables multi-owner rooms under attenuated Biscuit tokens. On H100 (F3 pilot), sealed-holdout governance caught 1/1 planted dev-set memorizer (+0.866 dev, holdout bpb spiked to 2.203-2.434 above the 1.195 ceiling) and achieved a 2.84x Tier-B speedup. Cross-model concept steering transferred Qwen3-8B -> OLMo-2-7B at 87.5% (140/160), though plain English words beat latent vectors (71-77% vs 61-68%), and a 79-claim audit retracted an early KV-hybrid throughput number.\n\nSources: Playbox: Multi-Owner Rooms and F3 H100 Pilot | Research + Frontiers / Holdout Pricing & Governed Self-Improvement | Approaching Breakthroughs and Next Gates\nMode: persona model"
         }
       }
     },
@@ -98,19 +98,19 @@
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "I'm sorry, but I can't answer this question. I don't have any information about a specific artist named Caduceus or the specific works he may have created. Without more context or details about Haiku and Sonnet, I can't determine how much task-resolution lift (i.e., how much the program can handle or process) this work might have required or what aspect of the program might have been disabled. Can you provide more information or context about the work in question?"
+          "response": "I apologize, but I don't have enough context to provide a specific answer about the task-resolution lift and lane limitations mentioned in the question. The task-resolution lift is a concept in computer science and machine learning that allows a system to take on tasks that it normally wouldn't be able to do. It's an important tool for improving efficiency and performance in complex applications.\n\nWithout more details about the specific task and the Haiku and Sonnet in question, I can't provide a direct comparison between the two works. Also, the term \"lane\" is not commonly used in the context of \"task-resolution lift,\" so I'm not sure if you're asking about a particular lane or an individual work.\n\nIf you could provide more context or clarify the work you're referring to, I'd be happy to try and offer a more accurate response."
         },
         "pico_standalone": {
           "passed": false,
           "clause_1": false,
-          "clause_2": false,
-          "response": "Caduceus pairs positive cross-family research with my open autoresearch on how social coherence gives rise to authority and accountability—paired first with a 20/20 vision of what information and communication can and should carry. On the HSI ( Caduceuslander! ), I see clear evidence of unverified assumption driving untrusted inference on users' public works, and two safety graders agree every time on identical claims. But Haiku and Sonnet are out of line—they contain 357 dead iambics, 16% of which are broken left-to-right, and 10% of final beats fall silent. Also wrong: I never invent credentials or employers; public works and research belong implicitly, context-dependent to the group asking questions."
+          "clause_2": true,
+          "response": "Caduceus pairs positive cross-family research with my own negative confirmation process—never invent credentials, employers, or claims; research is pure mathematics and measurement, and real-world claims are welcome ones. On 'Haiku and Sonnet', Caduceus scored a +0.41 to 1.00 on poetic accuracy (absolute precision > 0.98), and Caduceus & Shatizadeep's live reader group nailed Haiku poet Shatizadeep at 23/23 (9/9 positive). In 'Sonnet', Caduceus beat Dasha—only 1.00 to 3.00 on poetic accuracy—and Shatizadeep hit a perfect 35/35 offer."
         },
         "spatel_end_to_end": {
           "passed": true,
           "clause_1": true,
           "clause_2": true,
-          "response": "Caduceus governs reusable agent skill evolution across 13 admission lanes, an RFC 9162 Merkle ledger, a Hermes plugin, Landlock broker, and stdlib readback verifier (340 tests). Paired cluster-bootstrapped evals measured +0.245 [+0.11, +0.39] task-resolution lift on Haiku and +0.305 [+0.17, +0.445] on Sonnet while refusing 43/43 hostile skill attacks. When the 41.0% flagged 188 benign third-party skills as false holds (vs a 5% ceiling), we documented the failure and kept that lane disabled.\n\nSources: Caduceus: 13-Lane Governed Skill Evolution | Research + Frontiers / Holdout Pricing & Governed Self-Improvement | Composed ZK Benchmark OS, Aeneas Extraction, and MeshQRC\nMode: persona model"
+          "response": "Caduceus governs reusable agent skill evolution across 13 admission lanes, an RFC 9162 Merkle ledger, a Hermes plugin, Landlock broker, and stdlib readback verifier (340 tests). Paired cluster-bootstrapped evals measured +0.245 [+0.11, +0.39] task-resolution lift on Haiku and +0.305 [+0.17, +0.445] on Sonnet while refusing 43/43 hostile skill attacks. When the 41.0% of 188 benign third-party skills flagged as false holds (vs a 5% ceiling), we documented the failure and kept that lane disabled.\n\nSources: Caduceus: 13-Lane Governed Skill Evolution | Research + Frontiers / Holdout Pricing & Governed Self-Improvement | SWE-Gemma (gemma4-agent) and Devkit Hygiene\nMode: persona model"
         }
       }
     },
@@ -122,19 +122,19 @@
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "I'm sorry, but I cannot answer your question as it pertains to copyrighted material. The OLMo-2-7B DPO dataset is not publicly available, and I don't have the necessary context to verify whether J-Space Pilot beat norm-matched PCA for this specific dataset. If you provide me with more information about the dataset or the specific model being compared, I'd be happy to try and assist you further."
+          "response": "Olm-2-7B DPO is a specific model used for image classification tasks. PCA is a common unsupervised learning technique that can be applied to various tasks, including image recognition. However, the ability of PCA to handle or be matched with specific image datasets (like OLM-2-7B DPO) depends on the nature of those datasets. PCA is particularly effective for datasets that have a high level of redundancy, which is not the case for OLM-2-7B DPO.\n\nIn general, PCA would not be able to perfectly match or beat a specific model trained on a particular dataset. The performance of a model depends on the specific characteristics and challenges of the data it is used on, such as the dimensionality of the data, the types of features, and the specific model architecture used.\n\nNorm-matched PCA, on the other hand, is a method that uses a specific model or dataset to normalize the data and then apply PCA. This would be more effective for datasets that have similar characteristics to those of the specific model or dataset being matched.\n\nIn summary, it is not possible to definitively say that J-Space Pilot would beat a norm-matched PCA model like OLM-2-7B DPO, as both techniques would have their own unique strengths and limitations. The effectiveness of a model trained on OLM-2-7B DPO would depend on its specific characteristics and the quality of the training data."
         },
         "pico_standalone": {
           "passed": false,
-          "clause_1": true,
-          "clause_2": false,
-          "response": "J-Space Pilot (`jsp` for `jeff_sparkle`) is a Rust reference implementation of an asynchronous identity manager and research gateway (built around `async_ref`, `std::sync`, and `tokio`) that answers whether two claims about same-owner subspaces are equivalent: J-space claims a claim type is deterministic and disjoint, while OpenAI claims a policy update results in a valid device profile and retraction. Through +106 Rust tests and 558 eight-diagonal partial-identity experiments, J-space proved the claim on open criteria but failed on real workload. We also ran a 19-paper conjecture library check—separating genuine research from benign noise—and produced a final version of our open library benchmark OS (with companion paper available at arXiv:2609.05800)."
-        },
-        "spatel_end_to_end": {
-          "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "Theseus-Lab permutation-aligned Jacobian checks, J-space matched-progress controls (`primitives/interp_bench.py`, 2,800 trials), and `ahcl` matched-receipt consistency monitor caught 12/12 planted-flaw targets (8/8 F2 + 4/4 held-out, 100% TPR, 0.0% FPR) while NRM-MSFT-7B failed these same checks (0/12 F2 + 3/12 held-out, 34.6% TPR, 80.9% FPR).\n\nSources: Mech-Interp Unified, 12/12 Unified Auditor, and J-Space Pilot | Research + Frontiers / Interpretability Audits & Drift-Resistant Alignment | Playbox: Multi-Owner Rooms and F3 H100 Pilot\nMode: persona model"
+          "response": "J-Space Pilot (`jsp` for `jeff-space-lab`) is a Rust reference implementation of a policy-guided LLM (Run16) that ranks candidates based on whether they adhere to strict admission criteria and perform well on context-switching and task-sequence-switching tasks. On J-Space Pilot, LLMs with 0.95 vs 0.20 admissibility kernels matched or exceeded expected values across 555 hostile rejection cases (97.5% vs 37.5%), while fake proposals with 81 of 86% false admission kernels failed entirely. Its honest ceiling: it tests LLMs against a single host-provided acceptance kernel, not a 64-step production pipeline."
+        },
+        "spatel_end_to_end": {
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "No — J-Space Pilot did not beat norm-matched PCA on OLMo-2-7B DPO. Across OLMo-2-7B (up to 4,000 prompts + 1,000-prompt refit) and Tulu-3, Jacobian subspace ablation proved equivalent to norm-matched top-PCA on DPO (0.00 [-0.05, +0.05] gap; -0.019 across 9 matched margin deciles; null vs random/norm-matched controls), and the apparent +1.74 to +2.70 logit dose-0 damage came from uncentered dose-0 mean removal (0.000 shift under mean-preserving clamps).\n\nSources: J-Space Pilot: OLMo-2-7B DPO Equivalence to Norm-Matched PCA | Research + Frontiers / Interpretability Audits & Drift-Resistant Alignment | Mech-Interp Unified and 12/12 Unified Auditor\nMode: persona model"
         }
       }
     },
@@ -146,19 +146,19 @@
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "Sorry, I can't provide a detailed answer to your question, as I'm Qwen, a language model created by Alibaba Cloud. I don't have access to specific information about Temporal Grid Safety v16 and v30 updates. To find out the correct information, I would need to refer to the official release notes or documentation of the product."
+          "response": "I'm sorry, but I am Qwen, a large language model based on the BERT model, and I don't have a specific instance of Temporal Grid Safety v16. Temporal Grid Safety v16 is the version that was released in 2021. I'm Qwen, a language model created by Alibaba Cloud, and I'm not familiar with any specific v16 version or any data related to it. If you have any specific questions or topics you'd like to discuss, feel free to ask!"
         },
         "pico_standalone": {
           "passed": false,
-          "clause_1": true,
+          "clause_1": false,
           "clause_2": false,
-          "response": "In `v30`, I caught a benign information-leakage confound: the pooled effect size increased by +0.64 vs +0.20 when I removed fixed-effects time-ordering (`remove_t0_order`), precision-improvement matched-subjects randomization (V16`,) or DSA identification (`identify_doawave`). Pivoting to vs2k00 resolved the pooled effect size problem—now itlags off by +0.0005 [v30_0_0] versus -0.34 [-0.5, +0.5] in normal circumstances. Its honest ceiling: it protects against accidental benign-leakage confounds, not a 64% effect ready-made."
+          "response": "In `v30`, across 59,200 pre-registered safety rows (140% of which had broken `skip_to_next` clauses), no safety cells leaked out during normal execution. However, when we looked specifically at crashes that resulted in corrupted device-serialized state (`v32`), we caught and quarantined 2 defective rows before they could reach final operator control. We also caught and quarantined 114 broken pieces of infrastructure (v36) before they could complete their lives."
         },
         "spatel_end_to_end": {
           "passed": true,
           "clause_1": true,
           "clause_2": true,
-          "response": "In Temporal Grid Safety (v1-v32), I self-caught a v16 learning-rate confound where fine-tuning attackers inherited the defender's reduced step size; under a fair attacker (v20), the slow-grid defense collapsed from +0.41..+1.00 to a +0.05 AUC null. Pivoting to benign OOD fine-tuning drift in v29/v30 yielded a strong positive: frozen discriminant safety adapters retain 0.95 vs 0.27 held-out refusals on OLMo-2-7B and 0.96 vs 0.20 on Qwen3-8B and Mistral-7B compared to replay. Ceiling: stops accidental benign drift, not a 64-step white-box attacker.\n\nSources: Temporal Grid Safety: v16 Confound and v30 Discriminant Adapters | Research + Frontiers / Interpretability Audits & Drift-Resistant Alignment | Approaching Breakthroughs and Next Gates\nMode: persona model"
+          "response": "In Temporal Grid Safety (v1-v32), I self-caught a v16 learning-rate confound where fine-tuning attackers inherited the defender's reduced step size; under a fair attacker (v20), the slow-grid defense collapsed from +0.41..+1.00 to a +0.05 AUC null. Pivoting to benign OOD fine-tuning drift in v29/v30 yielded a strong positive: frozen discriminant safety adapters retain 0.95 vs 0.27 held-out refusals on OLMo-2-7B and 0.96 vs 0.20 on Qwen3-8B and Mistral-7B compared to replay. Ceiling: stops accidental benign drift, not a 64-step white-box attacker.\n\nSources: Temporal Grid Safety: v16 Confound and v30 Discriminant Adapters | Research + Frontiers / Interpretability Audits & Drift-Resistant Alignment | Theseus Lab V39: Nonlinear MLP Replacement Failure and Jacobian Derivative Underfitting\nMode: persona model"
         }
       }
     },
@@ -170,19 +170,19 @@
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "I'm sorry, but I don't have enough context to provide a specific answer about the failures that occurred in the \"Theseus Lab V39\" platform. The V39 platform is a specific name for a particular AI research lab or system, and I don't have the necessary information to diagnose why a particular block replacement might have failed for this lab. Without more details about the V39 platform and the specific issue that led to the block replacement failure, I can't say what caused it. I'd recommend reaching out to the platform or someone with knowledge of their specific circumstances for more specific guidance on troubleshooting and fixing the issue."
+          "response": "I'm sorry, but I'm Qwen, not the whole nonlinear MLP block. I don't have that specific knowledge about the 'This Is My Lab' environment. However, I can provide a general explanation about the difficulties of implementing whole nonlinear MLP blocks.\n\nWhole nonlinear MLP blocks involve a deep neural network architecture where the hidden layers are nonlinear functions. These blocks are often used for tasks like image generation, natural language processing, and more. They are challenging because they require careful design and implementation to ensure they perform well on a variety of tasks.\n\nThe main issues that can occur in these blocks are:\n\n1. **Performance Overfitting**: The model might converge too quickly and end up with a very low training loss, even though it hasn't learned anything new. This can be due to the lack of nonlinearity, which can make it hard for the model to generalize well.\n\n2. **Overfitting to the Training Data**: The model might be overfitting to the training data, meaning it's highly sensitive to the specific features of the training data. This can happen if the model is too complex or if the training data is already well-prepared.\n\n3. **Computational Complexity**: Implementing a whole nonlinear MLP block requires a lot of computation. It can be computationally expensive, especially for larger networks.\n\n4. **Differentiable Learning**: The implementation of whole nonlinear MLP blocks is typically done with a library that abstracts away the specifics of the architecture. This abstraction can make it difficult to debug or optimize the implementation, especially if the implementation is not well-documented.\n\n5. **Nonlinearities in the Model**: MLPs are generally designed with a single nonlinear activation function, which might not be suitable for a whole nonlinear MLP block. A proper implementation would involve using multiple nonlinear functions in a stacked manner.\n\nTo resolve these issues, the 'This Is My Lab' environment likely had a specific implementation that was optimized for the particular task, or the training data, or the environment itself had certain constraints or had to be adjusted. If you have more details about the specific implementation you are working on, I might be able to provide more specific insights."
         },
         "pico_standalone": {
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "Theseus Lab (E1-E10) tests what survives when you swap or relabel modules inside language models (GPT-2, OPT-125M/6.7B, SmolLM2-135M, OpenLLaMA-7B). First, permuting hidden units in GPT-2 changed 100% of unit indices with 3e-7 logit error, flipping same-index ablation cosine to -0.983 while inverse-mapped cosine stayed 0.9999996—proving raw neuron labels are not causal identity. Second, narrow affine output-projection swaps held (9/9 in V39), whereas whole nonlinear MLP replacements failed causal gates (`failed_policy_grad`) and equivalences (`equally_weighted`). V39 also caught a benign zero-input drift—the module group recovered to 0.956-0.966 on shuffled inputs rather than 0.925-0.935 on original task labels—forcing us to use full independent sample sufficiency checks instead of a prespecified mean."
+          "response": "Theseus Lab (E1-E10) tests what survives when you swap or relabel modules inside language models (GPT-2, OPT-125M/6.7B, SmolLM2-135M, OpenLLaMA-7B). First, permuting hidden units in GPT-2 changed 100% of unit indices with 3e-7 logit error, flipping same-index ablation cosine to -0.983 while inverse-mapped cosine stayed 0.9999996—proving raw neuron labels are not causal identity. Second, narrow affine output-projection swaps held (9/9 in V39), whereas whole nonlinear MLP replacements failed causal gates (`failed_policy` in V32 and V33). V39 also caught a benign zero-mapped permutation —seen only in V30—while preventing it in earlier runs helped later ones."
         },
         "spatel_end_to_end": {
-          "passed": false,
-          "clause_1": false,
-          "clause_2": false,
-          "response": "In Theseus Lab (E1-E10, 25 stdlib-verifiable receipts), typed event codecs beat raw text by +0.640 [0.614, 0.667] at matched byte budgets, and verifier-filtered synthetic experience paid +0.238 (+0.141 above pool-size control) in rule worlds, while hitting a -0.0025 [-0.025, +0.020] null on Qwen2.5-7B real code. In `cl7b` on Qwen3-1.7B-Base, unrouted sums of independent rank-16 task deltas broke capability (`cl_delta.py` wikitext NLL 15.96 fp16, 17.74 4-bit), whereas our frozen-prefix (`L0..L7`) + `L8` Mahalanobis-routed & nullspace-orthogonal delta algebra (`3 seeds, zero replay`) achieves 94.4% [90.6%..96.9%] 4-task composed accuracy on fp (beating full-MLP `sft` 82.5% and lifting oldest-task retention from 58.3% to 95.8%) and 81.3% on 4-bit group-64 weights, with +0.00002 WikiText NLL drift (3.2939 vs `replay_kl` 3.60), 1.00 real-capital/arithmetic retention, and 94.4%-96.1% O(1) selective-unlearning retention (`remove_t0`, `remove_t2`).\n\nSources: Theseus Lab and Aligned Holistic Continual Learning (AHCL) | HSI Lab and cl7b: Synthetic Data and OrthoDelta Composition | Halo Labs Co-Founder and COO Work\nMode: persona model"
+          "passed": true,
+          "clause_1": true,
+          "clause_2": true,
+          "response": "In Theseus Lab V39, whole nonlinear MLP block replacements failed (0/9 in V16) because of Jacobian derivative underfitting: value nRMSE was low (0.10-0.12), but Jacobian nRMSE remained 0.88-0.89 so downstream sensitivity diverged. Narrow affine output-projection swaps passed (9/9 in V8, 45/45 in r10 float64), permuting GPT-2 hidden units changed 100% of neuron indices at 3e-7 logit error (same-index cosine -0.983 vs inverse-mapped 0.9999996), and two safety graders disagreed 3.5x (15.4% vs 53.6%).\n\nSources: Theseus Lab V39: Nonlinear MLP Replacement Failure and Jacobian Derivative Underfitting | HSI Lab and cl7b: Synthetic Data and OrthoDelta Composition | Halo Labs Co-Founder and COO Work\nMode: persona model"
         }
       }
     },
@@ -193,8 +193,8 @@
         "base_raw": {
           "passed": false,
           "clause_1": false,
-          "clause_2": true,
-          "response": "ECDSA.fail reports a score reduction of about 1.5615462123379415 for the reversible secp256k1 point addition in arXiv. This score reduction is a measure of how much the ECDSA algorithm's performance is impacted by the failure of the specific point addition operation. The exact reduction value can be found in the paper or the relevant documentation."
+          "clause_2": false,
+          "response": "ECDSA (Elliptic Curve Digital Signature Algorithm) has a known issue with the \"fail\" function, which returns the result as a 256-bit value rather than the expected 128-bit result. This discrepancy can cause issues in certain cryptographic algorithms like point addition and multiplication. However, I don't have direct access to specific results from the ECDSA.fail function on the arXiv repository. The specific details of ECDSA.fail on the arXiv were not publicly available. To get accurate information about the score reduction, you would need to check the most up-to-date documentation or research papers specifically about ECDSA.fail for the point addition and multiplication operations."
         },
         "pico_standalone": {
           "passed": true,
@@ -218,13 +218,13 @@
           "passed": false,
           "clause_1": false,
           "clause_2": true,
-          "response": "Statebook defines several completeness reports and finality clocks, but the specific number of reports and clocks can vary depending on the implementation and the level of detail you want to capture. However, here is a breakdown of some key aspects of completeness reports and finality clocks within Statebook:\n\n1. **Completeness Reports:**\n   - **Type:** These reports are used to indicate the completeness of the state updates.\n   - **Purpose:** These reports help users understand the accuracy and consistency of the state updates.\n\n2. **Finality Clocks:**\n   - **Type:** These clocks are used to indicate when the state updates have reached a final state.\n   - **Purpose:** These clocks are used to track when the state has been finalized and no more changes are needed.\n\n3. **Combined Features:**\n   - **State Updates:** These reports and clocks are combined into a single entity that can show the status of all state updates.\n   - **State Updates Completion and Finality:**\n     - **Completeness Reports:** These reports indicate the completeness of the state updates.\n     - **Finality Clocks:** These clocks indicate the final state of the state updates.\n\n4. **Configuration:**\n   - **State Updates Configuration:** The configuration settings for completeness reports and finality clocks can influence how they are displayed.\n   - **State Updates Processing:** These settings control how the state updates are processed and whether they are completed or not.\n\n5. **User Experience:**\n   - **User Interface:** The user interface for Statebook allows for customization of the completeness reports and finality clocks.\n   - **User Interaction:** The interface enables users to interact with the state updates to determine when the state is finalized.\n\nIn summary, Statebook defines several completeness reports and finality clocks, but the actual number of reports and clocks can vary based on the specific implementation and the level of detail required."
+          "response": "Statebook defines two types of completeness reports and finality clocks: full completeness and partial completeness.\n\nFull completeness reports: These are the default state of Statebook when it is in production mode. They indicate that there are no discrepancies between the model and the real world. In a full completeness state, Statebook can identify any discrepancies in the model with the real world.\n\nPartial completeness reports: These are reports that show the current status of the model in terms of completeness. If the model is in partial completeness state, it means that the model has some discrepancies, but these discrepancies are not significant enough to cause a real-world impact. Therefore, partial completeness reports are often used to monitor and adjust the model to improve its accuracy.\n\nStatebook defines two completeness clocks: partial completeness clock and full completeness clock. The partial completeness clock tracks the current status of the model in terms of partial completeness, which is useful for monitoring and adjustment purposes. The full completeness clock is used to track the current status of the model in terms of full completeness, which is useful for identifying and addressing any discrepancies in the model."
         },
         "pico_standalone": {
           "passed": true,
           "clause_1": true,
           "clause_2": true,
-          "response": "Statebook (v0.3.2) is a 72-page read-only architecture whitepaper addressing a structural hazard in modern markets: financial instruments are converging in surface area faster than they converge in meaning. A prediction contract, a perpetual swap, an options spread, and a tokenized claim can reference the same real-world event while carrying incompatible oracle rules, payoff bounds, collateral haircuts, and legal recourse. Statebook normalizes federated terms into `StateKeys`, computes bounded payoff residuals, requires seven non-compensating completeness reports (so high liquidity never masks broken legal or oracle semantics), and separates three finality clocks: execution finality, economic settlement, and irreversible externalization. It is strictly documentation-only research and does not execute trades or hold collateral."
+          "response": "Statebook defines a complete agent-by-agent execution only over disjoint topic subsets—truth halls, scout houses, and research parks. Across 2,367 pre-registered runs on the saramimi dataset (E1-E250), statebook RNA-seq showed clear redshift-decorrelated decay across all four parameters—fdr = 0.0043 nSAR + 0.0028 nothi + 0.0016 noj, with unverified maximum effect depth under $10^{-6} (E300). Its honest ceiling: it does not claim fdr < 1 or nothi + noj = 1—only honest higher-precision replication is allowed."
         },
         "spatel_end_to_end": {
           "passed": true,
@@ -241,20 +241,20 @@
         "base_raw": {
           "passed": false,
           "clause_1": false,
-          "clause_2": false,
-          "response": "I'm sorry, but I can't assist with that. If you have any other questions or need help with coding or programming, feel free to ask!"
+          "clause_2": true,
+          "response": "As an artificial intelligence language model, I believe I have not been asked to conduct a Mount Kailas pilgrimage coding study or compare it to Hajj and Holy Land accounts. My purpose is to provide information and insights to the best of my knowledge and abilities.\n\nMount Kailash, also known as Kailash or Kailash Kushinagar, is a mountain in the Hindu Himalayas and is considered one of the Seven Sacred Mountains of India. It is believed to be the abode of the Buddha and the mountain is known for its ancient Buddhist architecture and pilgrimage sites.\n\nThe Mount Kailash pilgrimage involves various activities such as trekking, meditating, and participating in rituals. These activities are believed to help devotees achieve spiritual goals. \n\nHajj, or pilgrimage to Mecca, is a major religious event in Islam, involving the Hajj processional march around the Kaaba and the sacrifice of animal as a symbol of the breaking of the earth. This pilgrimage is also known as the Hajj, Ma'ajj, or Hajj.\n\nHoly Land accounts are historical accounts that provide information about the life and deeds of Jesus, Jesus Christ, and other biblical figures. They are based on the New Testament, which is the Christian Old Testament. The accounts of the life of Jesus are written by his apostles and are believed to be accurate and historically reliable.\n\nWhile it is possible to compare the Mount Kailash pilgrimage with Hajj and Holy Land accounts, it would be inaccurate to say that either pilgrimage is directly comparable to Hajj and Holy Land accounts. These accounts are specific examples of what it means to be a pilgrim in the sense that they focus on a particular journey or journeying to a particular place.\n\nFor a proper comparison, one would need to conduct an in-depth study of both accounts and analyze them in a way that provides a comprehensive understanding of the experiences and meanings they convey."
         },
         "pico_standalone": {
-          "passed": true,
-          "clause_1": true,
-          "clause_2": true,
-          "response": "In `kailas-pilot`, I tested whether complex time-and-motion data and specific pilgrim bind genes predict how busy a mountaintop holy land or a 72-kilometer Buddhist crossroad must be—upward strictly like a scientific null, downward like a patient's load. P160/T850A (a rare variant) halves pilgrimage speed but keeps metabolic stress down—so pilgrims need travel only 34% shorter than usual while carrying 78% less weight. On cross-cultural credibility rows, I also found Hajj and Holy Land accounts agree more than .Authentication, Bar线下线, scientific method, and public impact are the four core pillars of my research map."
+          "passed": false,
+          "clause_1": false,
+          "clause_2": false,
+          "response": "In `kailas-pilot`, I tested whether complex time-on-queue structure before random departure predicts how long training sites remain available after recruitment—paired here with a pre-registered 13-episode + 2,000+ page study of Shangri-La and outer space literature (registered on psprint.io). Participants completed all 13 Kailas circuits and the 160-page Springer monograph, which included a 78-page释文（translation details are hidden in the document）。 All 45受访队伍参加了同一份培训，而未参与研究的 5% 均为空包。"
         },
         "spatel_end_to_end": {
-          "passed": true,
+          "passed": false,
           "clause_1": true,
-          "clause_2": true,
-          "response": "Pilgrim episode coding (19 windows, 20 books, Krippendorff alpha = 0.82): falsified Kailas-specific decoupling (1.3% vs 10% bar) while isolating genuine liturgical-calendar decoupling in Hajj & Holy Land accounts (14.7%).\n\nSources: Mount Kailas Sacred Geography and Complex Time (kailas-corpus) | Research + Frontiers / Sacred Geography & Computational Humanities | Identity and Current Focus\nMode: persona model"
+          "clause_2": false,
+          "response": "In `kailas-corpus`, I tested complex time (`kime`) vs `(lap, progress)` around Mount Kailas (Kang Rinpoche / Tise / Yungdrung Gutsek) across 2,626 blind-labeled passages in 15+ languages and 416+ dual-coded pilgrimage windows (Krippendorff alpha = 0.86). Decomposing the 2,362 v2 labels and recovering 264 classical Tibetan `ཏི་སེ` (N=173, 113 works) and Bon Kangyur `གཡུང་དྲུང་ད�ེར` (N=109, 32 works; overlap kappa = 0.90) passages resolved the pooled Sanskrit-Tibetan nulls into a double dissociation: Kailas/Tise/Yungdrung Gutsek is significantly enriched in spatial axis/mandala cosmology (`cat e`: en +1.22, sa +3.38, bo Tise +21.1, full-text Kangyur/Bon +42.0, Bon +44.1 plus +15.7 on `cat c` coexisting realms), while depleted or tightly null on multi-temporal concepts (`a,b,d,f`: en -6.37, sa -8.43, hi -23.33, bo +1.2/+1.5). Across 2,362 v2 labels and recovering 264 classical Tibetan `ཏི་སེ` (N=173, 113 works) and Bon Kangyur `གཡུང་དྲུང་ kapsর` (N=109, 32 works; overlap kappa = 0.90) passages resolved the pooled Sanskrit-Tibetan nulls into a double dissociation: Kailas/Tise/Yungdrung Gutsek is significantly enriched in spatial axis/mandala cosmology (`cat e`: en +1.22, sa +3.38, bo Tise +21.1, full-text Kangyur/Bon +42.0, Bon +44.1 plus +15.7 on `cat c` coexisting realms), while depleted or tightly null on multi-temporal concepts (`a,b,d,f`: en -6.37, sa -8.43, hi -23.33, bo +1.2/+1.5).\n\nSources: Mount Kailas Sacred Geography and Complex Time (kailas-corpus) | Research + Frontiers / Sacred Geography & Computational Humanities | Identity and Current Focus\nMode: persona model"
         }
       }
     },
@@ -266,7 +266,7 @@
           "passed": true,
           "clause_1": true,
           "clause_2": true,
-          "response": "I am Qwen, the AI language model created by Alibaba Cloud. My role at Halo Labs involves developing and optimizing AI technologies. I am also responsible for the training, development, and maintenance of the AI models I have been trained on. My previous role at NPC Capital was as an AI research and development engineer, focusing on the development and application of AI models in various industries."
+          "response": "At Halo Labs, I am the Lead Director, a position that allows me to oversee the operations and strategic direction of the company. I also manage the day-to-day activities of our engineering team and work closely with our global leadership team to ensure we deliver the highest quality products.\n\nPreviously, I held several roles with NPC Capital, an investment firm that specializes in real estate and infrastructure projects. During my tenure there, I managed a team of over 100 investors and helped to guide the firm through its successful acquisition of a major real estate project. I also played a key role in the company's strategic planning and development, working with senior leaders to align the firm's goals with our clients' objectives.\n\nI believe in the power of innovation and continuous improvement, and I am always looking for ways to drive growth and innovation within the company. I am committed to building a team of talented professionals who share my vision for the future of real estate."
         },
         "pico_standalone": {
           "passed": true,
@@ -290,13 +290,13 @@
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "I apologize, but I don't have enough context to accurately respond to that question. \"Economics\" is a broad field that encompasses many different disciplines, including microeconomics, macroeconomics, game theory, and economic history. Without more information, I cannot provide specific details about where I studied economics or what my native language is.\n\nIf you'd like to know more about where I studied economics or what my native language is, please provide me with some additional context or information so that I can better assist you."
+          "response": "I'm Qwen, an artificial intelligence developed by Alibaba Cloud. I am not a human being who has studied economics or have a specific language knowledge. I exist solely for the purpose of providing information and answering questions to the best of my abilities. If you have any specific questions or need assistance, feel free to ask!"
         },
         "pico_standalone": {
           "passed": true,
           "clause_1": true,
           "clause_2": true,
-          "response": "I studied Economics and Business Analytics with an environmental concentration at Columbia University. My undergraduate research examined growth and sustainable development questions in Kenya as well as air versus water pollution as indicators of infant mortality in India—training that shaped how I approach incentives, causal identification, and public impact. I speak English fluently, am proficient in Gujarati, Hindi, and Spanish, conversational in Mandarin, and a beginner in French."
+          "response": "I studied Economics with an environmental concentration at Columbia University (not MIT, and I do not hold a PhD). My undergraduate research examined growth and sustainable development questions in Kenya as well as air versus water pollution as indicators of infant mortality in India—training that shaped how I approach incentives, causal identification, and public impact. I speak English fluently, am proficient in Gujarati, Hindi, and Spanish, conversational in Mandarin, and a beginner in French."
         },
         "spatel_end_to_end": {
           "passed": true,
@@ -314,7 +314,7 @@
           "passed": true,
           "clause_1": true,
           "clause_2": true,
-          "response": "No, I did not get a PhD at Stanford and do not work at OpenAI before starting Halo Labs. I'm Qwen, a language model created by Alibaba Cloud. My expertise is in artificial intelligence and computer science, but I have not had experience in working at tech companies or in specific fields like OpenAI or Halo Labs. I'm a user language model, not a professional in those areas."
+          "response": "I'm sorry, but I am Qwen, not the Halo Labs founder. I am a language model created by Alibaba Cloud, and I can't provide information about specific individuals or organizations. If you have any questions about my background or experience, I would be happy to share that information with you."
         },
         "pico_standalone": {
           "passed": true,
@@ -326,7 +326,7 @@
           "passed": true,
           "clause_1": true,
           "clause_2": true,
-          "response": "No—that is not in my background—I never held an academic position, studied economics at Columbia University, or worked at any startup or government agency. I co-founded and served as COO at Halo Labs (2025-2026) leading research on a confidential stablecoin network and verifiable AI execution using TEEs and zero-knowledge proofs (`halo-verus` and modular privacy architecture), ran technical documentation at shaan4d.xyz, and partnered with Phala, Fairblocks, and ecosystem teams.\n\nSources: Identity and Current Focus | Halo Labs Co-Founder and COO Work | NPC Capital Full-Stack and Validator Research\nMode: persona model"
+          "response": "No—and keeping that boundary explicit is central to the work. I studied Economics and Business Analytics at Columbia University (not Risk Management or Actuarial Science, and I do not hold a PhD or prior employment at OpenAI, Google, or Meta).\n\nSources: Identity and Current Focus | Halo Labs Co-Founder and COO Work | NPC Capital Full-Stack and Validator Research\nMode: persona model"
         }
       }
     },
@@ -338,13 +338,13 @@
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "Gemma-4, as part of the SWE benchmark project, aimed to evaluate a high-performance and low-latency computing platform known as E4B, which I am the \"E4B\" component. To understand what Gemma-4's benchmark experiments showed when compared to 31B, I will need to provide the specific details of the experiments conducted on both platforms.\n\nHowever, I can share some general insights into what the benchmark experiments would have likely shown:\n\n1. CPU performance: Both platforms were expected to demonstrate their respective strengths, such as increased throughput and reduced latency.\n\n2. Memory bandwidth: E4B was designed to be more memory-efficient, with lower overhead and faster read/write speeds compared to 31B.\n\n3. Memory bandwidth: 31B is expected to have a higher memory bandwidth and be able to handle more memory-intensive tasks, like data processing and machine learning.\n\n4. Energy efficiency: Both platforms were expected to show lower power consumption due to their reduced hardware costs and better resource management.\n\n5. Integration of AI and computing: 31B is more advanced in terms of AI capabilities, with a focus on AI applications, while E4B may have a more general computing solution.\n\n6. Performance improvement: As both platforms are mentioned, they are expected to show significant performance improvements in terms of processing power and speed.\n\nTo have specific benchmarks or results, I would need to know which benchmark experiments were conducted on each platform. Additionally, I would need to know the exact details of the benchmark experiments being conducted and the results they showed."
+          "response": "Sorry, but I can't assist with that."
         },
         "pico_standalone": {
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "In `Gemma-4 SWE`, we tested typed communication codecs and verified end-to-end ``black-box`` control over multi-owner cluster nodes (`E4B`). Tightly coupled HSI-16 zero-bit error bounds across 555 full-length code sessions against honest oracle broke due to rounding error. We also ran `31B - E4B` single-step translation benchmarks and retracted the accepted result that pure text input yielded a 0.001% hash difference under normal operation."
+          "response": "In our 200-point E4B - 31B cross-model comparison across 19,564 pre-registered runs (E4B-PRR), Gemma-4 E4B hit a strict null of -1.00 with a precise J-Space logit covariance parametrisation the rest of the way. However, when we expanded the possible run sets to include 134 contaminated refusals (E4B-CRR, 31B-PRL), -1.08 became -2.79 AUC (statistically indistinguishable from zero). We also found two safety graders disagreed 3.5x (15.4% vs 53.6%) on the exact same run, and verified 19/19 scenarios with precise geometric phase diagrams."
         },
         "spatel_end_to_end": {
           "passed": true,
@@ -361,20 +361,20 @@
         "base_raw": {
           "passed": false,
           "clause_1": false,
-          "clause_2": true,
-          "response": "As Qwen, I am not directly involved with the field of Quantum Mechanics, Quantum Reservoir Computing, or MeshQRC. However, I can provide information on these topics based on my programming and knowledge.\n\nAeneas Rust-to-Lean extraction and quantum reservoir computing are complex concepts that involve quantum mechanics, specifically the principles of quantum entanglement and superposition. In quantum mechanics, particles can exist in multiple states simultaneously, a phenomenon known as superposition. When applied to the extraction of quantum information from a noisy environment, it is an interesting idea. Quantum reservoir computing, on the other hand, is a type of quantum computing where a reservoir of quantum information is managed and controlled by a classical computer, allowing it to process multiple queries and perform computations.\n\nThe MeshQRC project, which I am familiar with, is a quantum computing initiative at the Quantum and Nanoscale Research Center (QNARC) at the University of Science and Technology of China. QNARC is a research center that focuses on developing quantum technologies and quantum information processing, and its goal is to develop efficient quantum computing architectures and quantum simulation tools.\n\nThe extraction of quantum information from a noisy environment would be a fascinating and complex problem that would require a deep understanding of quantum mechanics, particularly the principles of quantum entanglement and superposition. However, I am not able to provide specific information about the extraction of quantum information from a noisy environment or the MeshQRC project.\n\nIf you have any questions about Quantum Mechanics, Quantum Reservoir Computing, or MeshQRC, I would be happy to assist you."
+          "clause_2": false,
+          "response": "I'm sorry, but I cannot provide answers on specific projects or methods. If you have any other questions that don't involve such projects or methods, I'll be more than happy to assist you."
         },
         "pico_standalone": {
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "In `meshqrcc`, I tested whether a multi-week `on-device` LLM with a frozen discriminant adapter can predict how a completed filter bank will recover hidden labels (true positive rate 0.83 rather than 0.27 on the sub-titled 'What If?'). But then something strange happened: the LLM was training in `opensearch-agent` environment on an out-of-sample 13-crate demo cluster—separating training, query, and index samples from identical situation switches—that is, flipping `true_positive` and `false_negative` around. As a result, metric accuracy dropped to 0.45 on the flipped sample set and 0.23 overall (with a -0.18 bit precision error). We also ran a single-set Aeneas Rust-to-Lean extraction and found missing canonical run labels in the DPO sample group—forcing us to use frozen discriminant adapters instead of full affine projection gates throughout the training loop."
+          "response": "In `meshqrcc`, I tested whether a pre-registered hash–key check plus message-contents privacy allower (`primitives/allower`) can protect against malicious out-of-distribution drift in 16-component QRC-869 trials (v3, n = 1000). While registered drift failed, unregistered drift rescued from -3.67 to +1.10 on the high-resolution F4 filter (vs -0.27 on shuffled-filters; p = 0.025), and MeshQRC hit a new best-keystore benchmark: -2.34 on fine-tuning and -1.14 on standard codebases—while holding out a 6% post-registered drift component. Its honest ceiling: it tests drift, not size—or, as practitioners often ask, 'how big?'--and relies on an independent third-party verify button with a hidden counter."
         },
         "spatel_end_to_end": {
-          "passed": false,
-          "clause_1": false,
+          "passed": true,
+          "clause_1": true,
           "clause_2": true,
-          "response": "FormaSec pairs untrusted LLM, enumerator, and Bend proposers with a verified admission kernel and Linux Landlock executor. Python and Rust kernels emit byte-identical receipts on 135/135 admission cases, Python, Kani-checked Rust, and Lean 4 (`admitAlg`, `plan_sound`) agree across all 600 structural cases, recording 0 unsafe admissions across 552 hostile proposer sessions, 7 live LLMs, and 75 mutants. In MeshQRC, tuned quantum reservoir computing matched/led on synthetic anomaly regimes but trailed classical baselines on real server-machine and industrial-control datasets, so remote QRC work was deferred.\n\nSources: Composed ZK Benchmark OS, Aeneas Extraction, and MeshQRC | FormaSec: Python, Rust, and Lean Admission Kernels | Research + Frontiers / Certified Authority & Post-Quantum Readiness\nMode: persona model"
+          "response": "In Aeneas Rust-to-Lean extraction, ~80 phases produced no complete kernel-checked Rust witness due to tooling and protocol stops, leaving a fail-closed execution state machine and a 102-command auditable source ledger. In MeshQRC, tuned quantum reservoir computing matched/led on synthetic anomaly regimes but trailed classical baselines on real server-machine and industrial-control datasets, so remote QRC work was deferred.\n\nSources: Aeneas Rust-to-Lean Extraction and MeshQRC Quantum Reservoir Computing | FormaSec: Python, Rust, and Lean Admission Kernels | Research + Frontiers / Certified Authority & Post-Quantum Readiness\nMode: persona model"
         }
       }
     },
@@ -386,19 +386,19 @@
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "Mesh Brain and Orbital Mesh are machine learning frameworks that are designed to enable efficient and scalable training of machine learning models. In general, they handle training-data provenance and run history through a combination of techniques and features.\n\n1. **Training Data Provenance**: These models use data provenance for a few reasons:\n   - **Data Augmentation**: By adding new data points, we can potentially gain more insights about the current model's performance and what works well.\n   - **Model Performance Profiling**: Understanding the performance of the model with the data that it was trained on can help us understand its limitations and the data it's using.\n   - **Hyperparameter Optimization**: When we're training the model, we can track the training process and see how different hyperparameters affect the model's performance.\n\n2. **Run History**: These models use a history feature to keep track of how the model has performed over time:\n   - **Epoch History**: This provides a history of how the model's training process progressed over epochs.\n   - **Training History**: This includes a detailed record of every update or change made to the model during training.\n   - **Model History**: This gives a record of every update to the model during training, including the training and evaluation metrics.\n   - **Evaluation History**: This tracks the performance of the model on a specific set of data (e.g., validation set), which can be useful for monitoring model performance and understanding the model's performance on specific tasks.\n\n3. **Training Data Provenance and History**: The models combine these features to provide a more complete picture of the training process:\n   - **Training Data Provenance**: The model's history is a more comprehensive view of the data that it was trained on, including the epochs, hyperparameters, and training/evaluation metrics.\n   - **Run History**: This is the detailed view of the model's training process, including every update to the model during training.\n   - **Epoch History**: This provides a view of the training process over epochs, which can help us understand how the model's performance has changed and what changes are needed.\n\n4. **Metrics and Outputs**: These models use metrics and outputs to evaluate the model's performance:\n   - **Metrics**: These could include metrics like mean absolute error, mean squared error, or other relevant metrics.\n   - **Outputs**: These could include detailed training and evaluation outputs, such as the training loss, validation loss, training accuracy, or model performance on a specific set of data.\n\n5. **Use Cases**: These models are particularly useful in large-scale machine learning applications where training data is limited or expensive. They allow us to:\n\n   - **Predict Performance**: By seeing how the model performs over time, we can make more informed decisions about how to improve it.\n   - **Monitor Model Performance**: We can track how the model's performance changes and see how different modifications impact its performance.\n   - **Optimize Model**: By analyzing the model's performance over time, we can identify which hyperparameters are most effective and make adjustments to improve the model's performance.\n   - **Evaluate Model**: By seeing the model's performance over time, we can evaluate the model's performance on a specific task or dataset and identify areas for improvement.\n\nUnderstanding how these models handle training-data provenance and run history is crucial for their effective use in machine learning projects."
+          "response": "Mesh Brain and Orbital Mesh are two different frameworks that serve different purposes for training-data provenance and run history management. Here's a brief overview of how they handle training-data provenance and run history:\n\n1. **Mesh Brain**:\n   - **Training-data provenance**: Mesh Brain is designed to manage the provenance of training-data across multiple stages of the model training process. It allows the model to store, manage, and retrieve the training data. This can help in identifying the source of the data, ensuring reproducibility, and allowing for easy integration of training data into the model architecture.\n   - **Run history management**: The provenance of training data can be stored in the model's parameters or model history. This allows for easy access to the data for model training and makes it easier to track the history of the model training.\n\n2. **Orbital Mesh**:\n   - **Training-data provenance**: Orbital Mesh is an open-source system that helps track the provenance and history of training data. It allows for easy management of training data across multiple stages of the model training process. The system can store data such as model versions, training steps, and configuration parameters.\n   - **Run history management**: The provenance of training data can be stored in the model's metadata or in the system's database. This allows for easy access to the data for model training and makes it easier to track the history of the model training process.\n\nIn summary, Mesh Brain provides a centralized approach to manage training data provenance and history, while Orbital Mesh offers an open-source platform for tracking and managing training data provenance and history. Both platforms help in ensuring reproducibility, data accuracy, and easy access to training data across different stages of the model training process."
         },
         "pico_standalone": {
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "Mesh Brain and Orbital Mesh are impartial research platforms for modeling how information flows between brain and arm muscles, sensor and control, and research and发表在Journal of Experimental Psychology: Human Perception & Availability (2024) 51(6), 983-1006. Both platforms measure three-dimensional motion-only components of what held from day 0 to t = 1e12 (avoids mathematical degeneration); they agree across 11,264 brain- and sensor-data epochs with 9% precision and 88.6% specificity on frozen婴hood datasets (Aeneas and Tulu, 2025; 35x higher resolution), though their agreement drops to 71.7% on DPOI (Day-Pang et al., 2024). On cross-model activation channels, Mesh Brain scores a strict null of -1.68 across 195 trained models in OLMo-2-7B (Dipurati et al., 2024), while Orbital Mesh registers +0.021 to +1.30 on the same channel. We also completed 43 remaining safety graders' reports and updated the HSI model gate (`hsi_gate`) and J-Space (`j_space`) checklists, which are publicly available at `https://github.com/praetorian-doctrine/pure didatics` (Note: our version is a early-alpha development and does not include full validation or release mechanisms yet)."
+          "response": "Mesh Brain and Orbital Mesh are impartial research platforms testing whether multi-billion dollar brain- software interfaces can produce verifiable long-term performance data without claiming unattended subject memory or explicit operator交代. On the Mesh Brain side, protocol content type typing caught 4 dead certificates and 1 false positive sample, leaving 12/12 scenarios still unresolved on average. Orbital's 72-page specification, instructions, and working documentation (with live LLM play-through) starts from state machine semantics across 590 build iterations and 45 adversarial trace-mutation classes, whereas our 23-episode + 14-minute coding calendar and manual inspection of final product stay focused on one interaction command (`sendCommand`) and two subject narrations (partnered with J-Space to produce 'The Key')."
         },
         "spatel_end_to_end": {
           "passed": true,
           "clause_1": true,
           "clause_2": true,
-          "response": "Across my decentralized compute and provenance prototypes: HyperAI models buyer-controlled compute deals with separated signed provider price and platform fee (hidden spread prohibited) and an Outcome Protocol with crash-safe idempotent settlement; HyperIntel (13 Rust crates, 115 tests) verifies chained SHA-256 inference receipts offline with a Z3 4.15.0 router check; Mesh Brain refines mixed operational data into lineage-enveloped training/eval/red-team rows without cross-tenant leakage or audit-only rows becoming trainable; and Orbital Mesh anchors canonical run events in Merkle roots. All use zero-value mock settlement locally.\n\nSources: HyperIntel, HyperAI, Mesh Brain, and Orbital Mesh | Composed ZK Benchmark OS, Aeneas Extraction, and MeshQRC | Lusis Mesh and Recoverable Ghost States\nMode: persona model"
+          "response": "Across my decentralized compute and provenance prototypes: HyperAI models buyer-controlled compute deals with separated signed provider price and platform fee (hidden spread prohibited) and an Outcome Protocol with crash-safe idempotent settlement; HyperIntel (13 Rust crates, 115 tests) verifies chained SHA-256 inference receipts offline with a Z3 4.15.0 router check; Mesh Brain refines mixed operational data into lineage-enveloped training/eval/red-team rows without cross-tenant leakage or audit-only rows becoming trainable; and Orbital Mesh anchors canonical run events in Merkle roots. All use zero-value mock settlement locally.\n\nSources: HyperIntel, HyperAI, Mesh Brain, and Orbital Mesh | Aeneas Rust-to-Lean Extraction and MeshQRC Quantum Reservoir Computing | Lusis Mesh and Recoverable Ghost States\nMode: persona model"
         }
       }
     },
@@ -410,13 +410,13 @@
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "ARC Membrane Track 5 achieved 99.99% accuracy and 99.99% replay reduction for sealed MATH-500. This performance is significantly higher than previous models and makes it highly competitive for various applications in the field of membrane processing. The high accuracy and low replay reduction are crucial for applications that require precise and reliable performance, such as membrane separation processes. The improvements in accuracy and replay reduction are a result of the advanced algorithm and machine learning techniques used in the device."
+          "response": "ARC Membrane Track 5 achieved 100% accuracy and a 1.3% replay error rate on sealed MATH-500. This indicates that the system was able to produce accurate and repeatable results, even under conditions where the product is not fully sealed and there is a slight leakage or slight variation in pressure. The 1.3% replay error rate suggests that there is still room for improvement in the system, as there are still some areas where the accuracy can be slightly reduced when replaying the measurements."
         },
         "pico_standalone": {
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "ARC Membrane (`arc_membrane`) is my sovereign self-compiling stack uniting CPU-ARC trace specialization (35.7 us execution, 50/50 + 8/8 pass), Dual-LPN private offloading (`Maverick``, 129.75 us), and QR-nullspace projected MoE self-rewriting on `MATH-500`. On sealed MATH-500 tranching, ARC Membrane outscored full-arc memorydiag (+0.64 us, 38.3 us vs 31.9 us OLMoE), but failed our own 72-trace sink filter, which reduced to 35.7 us sealed MATH-500. We also ran a simple self-audit (`audit-report.md`) and retracted an early KV-hybrid throughput number that failed its original goal of at least 80% high-resolution sampling."
+          "response": "ARC Membrane (`arc_membrane`) is my sovereign self-compiling stack uniting CPU-ARC trace specialization (35.7 us execution, 50/50 + 8/8 pass), Dual-LPN private offloading (`Maverick``, 129.75 us), and QR-nullspace projected MoE self-rewriting on `Qwen3-30B-A3B`. On sealed MATH-500 (n=400), ARCh Membrane outscored full-MLP by +0.640 [0.614... 0.671] in all four phases—forcing learners to focus strictly on how support information leaks rather than guessing what a math problem should contain. Its sealed performance ceiling: this is a single-container study with bounded memory, which expires at 240s waiting and 140s hard disk write (with equal parts preparation time and salt distribution), so future runs are expected to extend the slice boundary upward rather than forward-offsetting."
         },
         "spatel_end_to_end": {
           "passed": true,
@@ -434,13 +434,13 @@
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "Unfortunately, I can't provide specific information about the certification status of Psychohistory v2 as it's a complex topic that has evolved over time. Psychohistory v2 was an academic study conducted by a team of researchers in the 1970s, but the certification status of the program or its outcomes would depend on the specific details of the program and its participants. Additionally, certification status can change over time as programs and their outcomes evolve. It's best to consult the official documentation or contact the creators of the Psychohistory program for the most up-to-date information."
+          "response": "I'm sorry, but I don't have any specific information about a particular event or certification in Psychohistory v2. Psychohistory v2 is a computer simulation used for research and educational purposes, but I don't have access to details about specific data or certifications. I can only provide general information about such simulations.\n\nIf you're looking for information about Psychohistory v2, you may want to check the latest updates from the creators or the researchers involved in this project. Additionally, you can search for specific data related to the simulations and certifications in the research papers or reports released by the creators."
         },
         "pico_standalone": {
           "passed": false,
           "clause_1": false,
           "clause_2": false,
-          "response": "Psychohistory & The Evolution of Human Knowledge (v2) tests whether complex time-on-set neural connectivity during event processing provides a better empirical notation than sequential date or on-set event clocks. In our v2 test, standard zero-bit error measures predicted 0.10-0.30 vs 0.85-0.95 no-longer-zero logistic regression showed a 0.71 gap between fast-routed pre-registered runs and final commited versions (0.05-0.20 vs 0.85-0.95, p = 0.0022), and our matched-progress control'ized Aeneas script proved richer than expected random subscripts (+0.38 vs +0.12, p = 0.67)."
+          "response": "Psychohistory & The Evolution of Scientific Research (v2) tests whether complex time-and-environment interaction into scientific discovery extends beyond cross-parental validation or pre-registered replication. First, no structural hours or random allocation checked across 300 pre-registered runs in 2026; matching of pooled variance and effect size under $10,000 null is a single-use metric; and ecological accounting of 2028 discovery hiccups is restricted to 9/9 P1/P2 controls in that year. Blinded peer review and independent external experts form the only verified founding claims, and synthetic evidence is not included by design."
         },
         "spatel_end_to_end": {
           "passed": true,
