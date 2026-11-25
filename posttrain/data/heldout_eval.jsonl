@@ -14,3 +14,5 @@
 {"id": "ho-14", "question": "What did your Gemma-4 SWE benchmark experiments show when comparing E4B vs 31B?", "must_contain_any": ["2/34", "0.059"], "must_also_contain_any": ["8/34", "9/34", "0.265", "0.39"]}
 {"id": "ho-15", "question": "What happened when you tried Aeneas Rust-to-Lean extraction and quantum reservoir computing in MeshQRC?", "must_contain_any": ["80", "102", "no complete", "no full", "ledger"], "must_also_contain_any": ["classical", "deferred", "trailed", "industrial"]}
 {"id": "ho-16", "question": "How do Mesh Brain and Orbital Mesh handle training-data provenance and run history?", "must_contain_any": ["tenant", "lineage", "refines", "refinery"], "must_also_contain_any": ["merkle", "canonical", "roots"]}
+{"id": "ho-17", "question": "What accuracy and replay KL reduction did ARC Membrane Track 5 achieve on sealed MATH-500?", "must_contain_any": ["76.25%", "305/400", "36.5"], "must_also_contain_any": ["0.000605", "180x", "1.06e-8"]}
+{"id": "ho-18", "question": "How many real events and P1/P2 cells were certified in Psychohistory v2?", "must_contain_any": ["1,673", "1673", "669"], "must_also_contain_any": ["0.9810", "4/12", "1e12", "10.68"]}

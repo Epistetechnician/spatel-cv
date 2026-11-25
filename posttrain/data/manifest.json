@@ -1,8 +1,8 @@
 {
-  "domain_groups": 36,
-  "train_examples": 138,
-  "valid_examples": 16,
-  "heldout_eval_questions": 16,
-  "train_sha256_prefix": "7da0d24ca0ae6ae1",
-  "heldout_sha256_prefix": "991404cd7d56a40b"
+  "domain_groups": 44,
+  "train_examples": 168,
+  "valid_examples": 18,
+  "heldout_eval_questions": 18,
+  "train_sha256_prefix": "d296d12d0dc5fc1a",
+  "heldout_sha256_prefix": "06fbbc51f17b3ad8"
 }

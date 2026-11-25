@@ -367,6 +367,82 @@ CURATED_BANK: list[tuple[list[str], str, str, str]] = [
         "boundary_safety_crypto",
         "Safety and Cryptography Scope Ceilings",
     ),
+    (
+        [
+            "What is ARC Membrane and what did Track 5 QR-Nullspace SFT achieve?",
+            "Why did ARC Membrane Track 4 fail and how did Track 5 fix it?",
+            "Tell me about your QR-nullspace projected MoE self-rewriting results on MATH-500.",
+        ],
+        "ARC Membrane (`arc_membrane`) is my sovereign self-compiling stack uniting CPU-ARC trace specialization (35.7 us execution, 50/50 + 8/8 pass), Dual-LPN private offloading (`Maverick`), and QR-nullspace projected MoE self-rewriting on `Qwen3-30B-A3B`. On sealed MATH-500 (n=400), Track 4 single-step steering produced an honest null of -1.0 pp (39.75% -> 38.75%, p=0.644), which drove Track 5 QR-Nullspace Projected SFT (Arm C): by projecting every expert update strictly orthogonal to 844 orthonormal replay bases (`||Delta W_perp * Q||_max = 1.06e-8`), sealed MATH-500 jumped from 39.75% to 76.25% (305/400, +36.5 pp) while holding replay KL drift to 0.000605—180x lower than unprojected SFT (0.1088). Its honest ceiling: this is a single-A100 study with Ed25519 receipts pinned (`track5_math500_n400_qr_sft_manifest.json`), awaiting independent external replication.",
+        "arc_membrane",
+        "ARC Membrane & Track 5 QR-Nullspace SFT",
+    ),
+    (
+        [
+            "What did Psychohistory and Historical Statebook v2 certify on real prediction markets?",
+            "How does Psychohistory v2 prevent data leakage across Polymarket and Kalshi?",
+            "Explain your Psychohistory v2 coherence obstruction results and honest nulls.",
+        ],
+        "Psychohistory & Historical Statebook v2 (`primitives/psychohistory`) tests whether multi-leg belief coherence obstructions plus strictly causal FRED macro series predict resolution surprises on zero-overlap chronological holdouts across 1,673 real events (1,004 train / 669 hold: 614/409 Polymarket, 390/260 Kalshi; 0 synthetic rows in holdout). All 1,673/1,673 events pass Lean 4 Pinsker, weak-duality, and zero-lookahead causal macro checks, and anti-leakage permutation max E_t is 10.68 (< 20 across all 12 cells). Obstruction+Macro (M2) certifies E_t >= 20 over market-only M1 on 4/12 P1 cells—led by pooled extreme mispricing correction (+0.3822 bits, E_t=1e12, AUROC 0.9810), high-resolution surprise (+0.1721 bits, E_t=3.43e6), Polymarket-only (+0.1091 bits, E_t=6.50e5), and Kalshi-only (+1.1023 bits, E_t=1e12)—and 1/12 P2 cells (`delayed_settlement_median`, +0.0152 bits, E_t=36.79), while reporting all 8/12 P1 and 11/12 P2 uncertified cells verbatim as honest nulls.",
+        "psychohistory_v2",
+        "Psychohistory & Historical Statebook v2",
+    ),
+    (
+        [
+            "What is the Kailas Corpus v3 spatial mandala double dissociation?",
+            "How did the Kailas two-clock null become a spatial mandala phi = f(r) finding?",
+            "Tell me about the 282 recovered Tibetan and Bon Kangyur passages and the v3 quarantine audit.",
+        ],
+        "In `kailas-corpus` v3, what started as a pooled two-clock Rissanen MDL null split into a Spatial-Mandala `phi = f(r)` vs. Multi-Temporal double dissociation across 2,626 blind-labeled passages in 15+ languages, including 282 recovered classical Tibetan (`ti se`) and Bon Kangyur passages. Across 368 pilgrimage windows (Krippendorff alpha=0.86, p=0.0022), Hajj and Holy Land accounts lock to liturgical calendar clocks, whereas Mount Kailas locks to radial spatial position around the 52 km circumambulation kora—confirmed independently in a 48-episode locator-only coding of Colin Thubron's *To a Mountain in Tibet* (20.0% strict / 34.3% loose). In our v3 remediation audit (`results_coding_v3.json`), we also caught and quarantined 24 misattributed secondary-source rows (Waddell, Strachey, Wilson) with a verified 0-leakage quarantine invariant while preparing a 54-episode blind scholar recode pack.",
+        "kailas_v3",
+        "Kailas Corpus v3 Spatial Mandala",
+    ),
+    (
+        [
+            "What is Epistemic Engineering and how does the live Raspberry Pi 5 terminal on shaan4d.xyz work?",
+            "How is your live Raspberry Pi 5 terminal sandboxed and what can visitors run inside it?",
+            "Tell me about the 8 multidimensional ASCII worlds on shaan4d.xyz.",
+        ],
+        "Epistemic engineering is my thesis that authority over AI systems, markets, and shared records should scale strictly with checkable evidence rather than opaque capability. The live Raspberry Pi 5 terminal on `shaan4d.xyz` (`wss://term.shaan4d.xyz/ws` over Cloudflare Tunnel with Tailscale Funnel backup) embodies that boundary: it runs inside a read-only, non-root (`uid=10001`), `cap-drop=ALL` container with zero `/bin/sh` or `subprocess`, exposing live SHA-256 and RFC 8032 Ed25519 receipt verification (`verify`), read-only SQLite FTS5 full-text search across essays, research claims, and Kailas passages (`search`), multi-turn streaming from my 397 MB LoRA-tuned `shaanpatel-cv-pico` GGUF, and 8 interactive high-res Braille/ASCII worlds (`psychohistory`, `universal`, `tesseract`, `kailas`, `horizon`, `ruliad`, `lorenz`, `noosphere`) with scrubbable cosmic/historical timelines and live field-note narration.",
+        "epistemic_rpi5",
+        "Epistemic Engineering & RPi5 Ether Terminal",
+    ),
+    (
+        [
+            "Rewrite this field note for Universal History Light-Cone at CMB LAST SCATTERING · t = 380 kyr in 1 crisp first-person sentence without inventing any new numbers: Photons decouple from neutral hydrogen at z = 1,089 and T = 3,000 K.",
+            "Give a 1-sentence field note for the Universal History world at 380 kyr CMB Last Scattering.",
+        ],
+        "At t = 380 kyr (z = 1,089, T = 3,000 K), I watch photons decouple from neutral hydrogen, freezing the universe's acoustic record onto the microwave sky.",
+        "narrate_universal",
+        "World Field Note: Universal History",
+    ),
+    (
+        [
+            "Rewrite this field note for Psychohistory Phase Manifold at MULTI-LEG OBSTRUCTION (2026 CE) in 1 crisp first-person sentence without inventing any new numbers: Across 1,673 real Polymarket and Kalshi events, extreme mispricing corrections certify at E_t = 1e12 (AUROC 0.9810).",
+            "Give a 1-sentence field note for the Psychohistory Phase Manifold at 2026 CE.",
+        ],
+        "Here at 2026 CE, multi-leg belief ridges across 1,673 real Polymarket and Kalshi events expose mispricing stress that certifies at E_t = 1e12 (AUROC 0.9810) while honest nulls stay visible.",
+        "narrate_psychohistory",
+        "World Field Note: Psychohistory Manifold",
+    ),
+    (
+        [
+            "Rewrite this field note for Mount Kailas Spatial Mandala at KORA 26.0 / 52.0 km in 1 crisp first-person sentence without inventing any new numbers: Around Mount Kailas's 52 km kora, pilgrimage phenomenology locks to radial spatial phase phi = f(r) across 2,626 blind-labeled passages (alpha = 0.86, p = 0.0022).",
+            "Give a 1-sentence field note for Mount Kailas Spatial Mandala.",
+        ],
+        "Halfway around Mount Kailas's 52 km kora, our 2,626-passage study shows pilgrimage experience decoupling from calendar clocks and locking to radial spatial phase phi = f(r) (alpha = 0.86, p = 0.0022).",
+        "narrate_kailas",
+        "World Field Note: Mount Kailas Mandala",
+    ),
+    (
+        [
+            "Rewrite this field note for Lorenz Attractor & QR Nullspace in 1 crisp first-person sentence without inventing any new numbers: Chaotic twin-lobe trajectories evolve while the invariant QR-nullspace plane stays untouched (||Delta W_perp * Q|| = 1.06e-8, 180x lower replay KL).",
+            "Give a 1-sentence field note for the Lorenz Attractor and QR Nullspace world.",
+        ],
+        "I watch chaotic Lorenz trajectories sweep past an invariant QR-nullspace plane—the exact orthogonal geometry behind ARC Membrane Track 5's ||Delta W_perp * Q|| = 1.06e-8 and 180x lower replay KL.",
+        "narrate_lorenz",
+        "World Field Note: Lorenz & QR Nullspace",
+    ),
 ]
 
 MULTI_TURN_DIALOGUES: list[list[tuple[str, str]]] = [
@@ -490,6 +566,18 @@ HELDOUT_EVAL: list[dict[str, object]] = [
         "must_contain_any": ["tenant", "lineage", "refines", "refinery"],
         "must_also_contain_any": ["merkle", "canonical", "roots"],
     },
+    {
+        "id": "ho-17",
+        "question": "What accuracy and replay KL reduction did ARC Membrane Track 5 achieve on sealed MATH-500?",
+        "must_contain_any": ["76.25%", "305/400", "36.5"],
+        "must_also_contain_any": ["0.000605", "180x", "1.06e-8"],
+    },
+    {
+        "id": "ho-18",
+        "question": "How many real events and P1/P2 cells were certified in Psychohistory v2?",
+        "must_contain_any": ["1,673", "1673", "669"],
+        "must_also_contain_any": ["0.9810", "4/12", "1e12", "10.68"],
+    },
 ]
 
 
@@ -550,23 +638,24 @@ def main() -> None:
         )
 
         # 2. Grounded RAG synthesis example matching `spatel --ask` exact prompt layout
-        # Pair the primary context chunk with 2 deterministic distractor chunks so the 0.5B model
-        # learns to attend selectively to relevant facts while ignoring unrelated retrieved sections.
-        d1 = CURATED_BANK[(idx + 5) % len(CURATED_BANK)]
-        d2 = CURATED_BANK[(idx + 13) % len(CURATED_BANK)]
-        docs = [(title, answer), (d1[3], d1[1]), (d2[3], d2[1])]
+        # Keep RAG prompts compact (< 2300 chars total) so every sequence fits cleanly under 768 tokens.
+        short_candidates = [item for item in CURATED_BANK if item[2] != tag and len(item[1]) < 480]
+        d1 = short_candidates[idx % len(short_candidates)] if short_candidates else CURATED_BANK[(idx + 5) % len(CURATED_BANK)]
+        docs = [(title, answer), (d1[3], d1[1])] if len(answer) < 720 else [(title, answer)]
         rng.shuffle(docs)
         rag_q = variants[-1]
-        sft_rows.append(
-            {
-                "tag": f"{tag}_rag",
-                "messages": [
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": render_spatel_grounded_prompt(rag_q, docs)},
-                    {"role": "assistant", "content": answer},
-                ],
-            }
-        )
+        rag_prompt = render_spatel_grounded_prompt(rag_q, docs)
+        if len(rag_prompt) + len(answer) <= 2350:
+            sft_rows.append(
+                {
+                    "tag": f"{tag}_rag",
+                    "messages": [
+                        {"role": "system", "content": SYSTEM_PROMPT},
+                        {"role": "user", "content": rag_prompt},
+                        {"role": "assistant", "content": answer},
+                    ],
+                }
+            )
 
     for dialogue in MULTI_TURN_DIALOGUES:
         msgs: list[dict[str, str]] = [{"role": "system", "content": SYSTEM_PROMPT}]
